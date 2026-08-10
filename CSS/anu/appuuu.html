@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rose Milk Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#fff0f5;
+    color:#333;
+}
+
+/* Navbar */
+nav{
+    background:#ff4d88;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffe4e1;
+}
+
+/* Sections */
+section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    text-align:center;
+}
+
+#home{
+    background:linear-gradient(to right,#ffb6c1,#ffe4e1);
+}
+
+#about{
+    background:#fff;
+}
+
+#menu{
+    background:#ffe4ec;
+}
+
+/* Content */
+h1{
+    font-size:50px;
+    color:#d63384;
+    margin-bottom:20px;
+}
+
+p{
+    max-width:700px;
+    line-height:1.8;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+img{
+    width:300px;
+    border-radius:20px;
+    margin:20px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+button{
+    background:#ff4d88;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#d63384;
+    transform:scale(1.05);
+}
+
+/* Menu Cards */
+.menu-container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    width:250px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    color:#d63384;
+    margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+</nav>
+
+<!-- Page 1 -->
+<section id="home">
+    <h1>Welcome to Rose Milk World</h1>
+
+    <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4"
+    alt="Rose Milk">
+
+    <p>
+        Enjoy the refreshing and creamy taste of chilled Rose Milk made with fresh milk and sweet rose syrup.
+    </p>
+
+    <button>Order Now</button>
+</section>
+
+<!-- Page 2 -->
+<section id="about">
+    <h1>About Rose Milk</h1>
+
+    <img src="https://images.unsplash.com/photo-1514996937319-344454492b37"
+    alt="Rose Drink">
+
+    <p>
+        Rose Milk is a delicious traditional drink loved for its sweet floral flavor and cooling effect.
+        It is perfect for hot summer days and special occasions.
+    </p>
+
+    <button>Learn More</button>
+</section>
+
+<!-- Page 3 -->
+<section id="menu">
+    <h1>Our Special Menu</h1>
+
+    <div class="menu-container">
+
+        <div class="card">
+            <h3>Classic Rose Milk</h3>
+            <p>Fresh milk with rose syrup.</p>
+            <button>₹50</button>
+        </div>
+
+        <div class="card">
+            <h3>Ice Cream Rose Milk</h3>
+            <p>Rose milk topped with vanilla ice cream.</p>
+            <button>₹80</button>
+        </div>
+
+        <div class="card">
+            <h3>Badam Rose Milk</h3>
+            <p>Rose milk with almond flavor.</p>
+            <button>₹90</button>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Program 10: Count digits and spaces
+text = input("Enter text: ")
+digit_count = 0
+space_count = 0
+for ch in text:
+    if ch.isdigit():
+        digit_count += 1
+    elif ch == " ":
+        space_count += 1
+print("Digit Count:", digit_count)
+print("Space Count:", space_count)

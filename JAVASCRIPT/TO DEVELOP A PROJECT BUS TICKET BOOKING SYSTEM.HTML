@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #f8fbff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            width: 360px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0d47a1;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 15px;
+            background: #1976d2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1565c0;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Bus Ticket Booking</h2>
+        <label>Name</label>
+        <input id="name" type="text" placeholder="Enter your name">
+
+        <label>Source</label>
+        <select id="source">
+            <option value="">Select Source</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Chennai</option>
+            <option>Hyderabad</option>
+        </select>
+
+        <label>Destination</label>
+        <select id="destination">
+            <option value="">Select Destination</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Chennai</option>
+            <option>Hyderabad</option>
+        </select>
+
+        <label>Number of Seats</label>
+        <input id="seats" type="number" min="1" placeholder="Enter seats">
+
+        <label>Date</label>
+        <input id="date" type="date">
+
+        <button onclick="bookTicket()">Book Ticket</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function bookTicket() {
+            const name = document.getElementById("name").value.trim();
+            const source = document.getElementById("source").value;
+            const destination = document.getElementById("destination").value;
+            const seats = parseInt(document.getElementById("seats").value);
+            const date = document.getElementById("date").value;
+            const result = document.getElementById("result");
+
+            if (!name || !source || !destination || !seats || !date) {
+                result.innerText = "Please fill all the fields.";
+                return;
+            }
+
+            let farePerSeat = 0;
+
+            if (source === destination) {
+                farePerSeat = 100;
+            } else if ((source === "Delhi" && destination === "Mumbai") || (source === "Mumbai" && destination === "Delhi")) {
+                farePerSeat = 1500;
+            } else if ((source === "Delhi" && destination === "Chennai") || (source === "Chennai" && destination === "Delhi")) {
+                farePerSeat = 1800;
+            } else {
+                farePerSeat = 1200;
+            }
+
+            const totalFare = farePerSeat * seats;
+            const discount = seats >= 3 ? totalFare * 0.10 : 0;
+            const finalFare = totalFare - discount;
+
+            result.innerHTML = `
+                <strong>Ticket Booked Successfully!</strong><br>
+                Name: ${name}<br>
+                Route: ${source} to ${destination}<br>
+                Date: ${date}<br>
+                Seats: ${seats}<br>
+                Final Fare: ₹${finalFare}
+            `;
+        }
+    </script>
+</body>
+</html>

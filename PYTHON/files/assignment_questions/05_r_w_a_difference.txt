@@ -1,0 +1,1 @@
+Differentiate between r, w, and a modes.

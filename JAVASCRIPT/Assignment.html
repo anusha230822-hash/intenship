@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment operators</title>
+</head>
+<body>
+    <h1>Assignment operators</h1>
+    <label for="x">Enter first number (x):</label>
+    <input type="number" id="x" name="x"><br><br>
+    <button onclick="calculate()">Calculate</button>
+    <script>
+        function calculate(){
+         const x = parseInt(document.getElementById('x').value);
+         let plusEqual = x;
+            let minusEqual = x;
+            let multiplyEqual = x;
+            let divideEqual = x;
+            let modulusEqual = x;
+            plusEqual += 5;
+            minusEqual -= 10;
+            multiplyEqual *=20;
+            divideEqual /= 30;
+            modulusEqual %= 40;
+            alert(`x += 5: ${plusEqual}\n
+            x -= 10: ${minusEqual}\n
+            x *= 20: ${multiplyEqual}\n
+            x /= 30: ${divideEqual}\n
+            x %= 40: ${modulusEqual}`);
+        }
+    </script>
+    
+</body>
+</html>

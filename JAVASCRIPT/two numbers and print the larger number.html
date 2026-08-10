@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWO NUMBERS AND PRINT THE LARGER NUMBER</title>
+</head>
+<body>
+    <script>
+        function findLargerNumber() {
+            const num1 = parseInt(prompt("Enter the first number:"));
+            const num2 = parseInt(prompt("Enter the second number:"));
+            if (num1 > num2) {
+                alert(`The larger number is: ${num1}`);
+            } else if (num2 > num1) {
+                alert(`The larger number is: ${num2}`);
+            } else {
+                alert("Both numbers are equal.");
+            }
+        }
+        findLargerNumber();
+    </script>
+</body>
+</html>

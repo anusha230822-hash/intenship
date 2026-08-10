@@ -1,0 +1,1 @@
+Explain read(), readline(), and readlines().

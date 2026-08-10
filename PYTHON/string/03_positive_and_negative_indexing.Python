@@ -1,0 +1,4 @@
+# Program 3: Demonstrate positive and negative indexing
+text = "PYTHON"
+print("Positive indexing:", text[0], text[2], text[4])
+print("Negative indexing:", text[-1], text[-3], text[-5])

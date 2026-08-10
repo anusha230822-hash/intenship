@@ -1,0 +1,107 @@
+# Create a tuple with 5 student names
+tup = ("yashu", "anu", "king", "teju", "harsha")
+print(type(tup))
+
+# Create a tuple from 1 to 10
+sid = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+print(sid)
+
+# Create an empty tuple
+et = ()
+print(type(et))
+
+# Create a tuple with only one element
+singleelementtuple = (1,)
+print(singleelementtuple)
+print(type(singleelementtuple))
+
+# Print all elements in a tuple
+t = (13, "anu", "cse")
+print(t)
+
+# Find the length of the tuple
+print(len(tup))
+
+# Find the first element of the tuple
+print(tup[0])
+
+# Access the last element of the tuple
+print(tup[-1])
+
+# Access the 3rd element of the tuple
+print(tup[2])
+
+# Print the first 4 elements using slicing
+print(tup[:4])
+
+# Create a tuple of 10 numbers and print the element at index 6
+print(sid[6])
+
+# Print the last 3 elements of the tuple
+print(tup[-3:])
+
+# Print all elements except the first element
+print(tup[1:])
+
+# Print all elements except the last element
+print(tup[:-1])
+# Print all elements in reverse order
+print(tup[::-1])
+# Reverse a tuple using slicing
+reversed_tup = tup[::-1]
+print(reversed_tup)
+
+# Print elements in alternate order
+print(tup[::-2])
+
+# Print only even index positions
+print(tup[::2])
+
+# Print elements at odd index positions
+print(tup[1::2])
+
+# Find the index of a given element
+print(tup.index("king"))
+
+# Check whether a value is in the tuple
+print("anu" in tup)
+print("king" in tup)
+
+# Find the repetition of an element using count
+print(tup.count("anu"))
+
+# Find the index of an element in a tuple
+py_tup = ("python", "java", "c", "python")
+print(py_tup.index("python"))
+
+# Count how many times 10 appears in a tuple
+num_tup = (1, 10, 2, 10, 3, 10, 4)
+print(num_tup.count(10))
+
+# Find the first occurrence of a value using index
+print(py_tup.index("python"))
+
+# Check whether 'java' is present in the tuple
+print("java" in py_tup)
+
+# Concatenate two tuples
+concat_tup = tup + py_tup
+print(concat_tup)
+
+# Repeat a tuple 3 times
+repeated_tup = tup * 3
+print(repeated_tup)
+
+# Convert a list into a tuple
+my_list = [10, 20, 30, 40]
+my_tuple = tuple(my_list)
+print(my_tuple)
+
+# Convert a tuple into a list
+my_list_from_tuple = list(my_tuple)
+print(my_list_from_tuple)
+
+# Add a new element to a tuple by creating a new tuple
+new_tuple = my_tuple + (50,)
+print(new_tuple)
+ 

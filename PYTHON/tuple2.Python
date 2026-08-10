@@ -1,0 +1,246 @@
+# create a tuple with 5 student names
+tup = ("yashu", "anu", "k", "teju", "harsha")
+print(type(tup))
+
+# create a tuple from 1 to 10
+sid = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+print(sid)
+
+# create an empty tuple
+et = ()
+print(type(et))
+
+# create a tuple with only one element
+singleelementtuple = (1,)
+print(singleelementtuple)
+print(type(singleelementtuple))
+
+# print all elements in a tuple
+t = (13, "anu", "cse")
+print(t)
+
+# find the length of the tuple
+print(len(tup))
+
+# finding the first element of tuple
+print(tup[0])
+
+# accessing the last element of tuple
+print(tup[-1])
+
+# accessing the 3rd element of tuple
+print(tup[2])
+
+# print first 4 elements using slicing
+print(tup[:4])
+
+# print elements from index 6 onward
+print(sid[6:])
+
+# print the last 3 elements of tuple
+print(tup[-3:])
+
+# print all elements except the first element
+print(tup[1:])
+
+# print all elements except the last element
+print(tup[:-1])
+
+# print all elements in reverse order
+print(tup[::-1])
+
+# print alternate elements from the tuple
+print(tup[0:-1:2])
+
+# print only even index positions from sid
+print(sid[::2])
+
+# print only odd index positions from sid
+print(sid[1::2])
+
+# find the index of a given element
+print(tup.index("anu"))
+
+# checking whether a value is in the tuple
+print("anu" in tup)
+
+#find the repetation of a element using count 
+t2 = (1,1,1,2,2,3,1,4,5,6)
+print(t2.count(1))
+
+#find the index of python
+string = ("python","java","c","c++")
+print(string.index("python"))
+
+#count how many time 10 is appear
+print(sid.count(10))
+
+#find the first occurence of a value using index
+print(tup[0])
+
+#check wether the java present in tuple
+print("java" in string)
+
+#concate two tuples
+print(sid + t2)
+
+#repeate a tuple 3 times
+print(t2*3)
+
+#convert a list into tuple
+li = [1,2,3,4,5]
+t3 = tuple(li)
+print(t3)
+print(type(t3))
+
+#tuple to list
+li2 = list(tup)
+print(li2)
+print(type(li2))
+
+#add a new element to a tuple by creating a new tuple
+t3 = tup + ("siri",)
+print(t3)
+
+#remove an element from a tuple by converting it into a list
+li3 = list(t2)
+print(li3)
+li3.remove(1)
+print(li3)
+
+#replace a element in the tuple by converting it into a list
+li3[1]=7
+print(li3)
+
+# create a tuple by user input values
+n = int(input("Enter the number of values: "))
+li4 = []
+for i in range(n):
+    value = input(f"Enter value {i+1}: ")
+    li4.append(value)
+
+user_tuple = tuple(li4)
+print("Tuple created from input:", user_tuple)
+print(type(user_tuple))
+
+#create a tuple using constructor
+t4 = tuple([1, 2, 3, 4, 5])
+print(t4)
+print(type(t4))
+
+#create a tuple of characters from a string
+word = "yashu"
+t5 = tuple(word)
+print(t5)
+
+#find the max value in a tuple
+t6 = (3, 8, 1, 6, 2)
+print("Max value:", max(t6))
+
+#min values in tuple
+print("Min value:", min(t6))
+
+#sum of all values in tuple
+print("Sum:", sum(t6))
+
+#find the avg of a tuple
+avg_value = sum(t6) / len(t6)
+print("Average:", avg_value)
+
+#sort a tuple in ascending order
+sort1 = tuple(sorted(t6))
+print("Sorted ascending:", sort1)
+
+#sort a tuple in descending order
+sort2 = tuple(sorted(t6, reverse=True))
+print("Sorted descending:", sort2)
+print(type(sort2))
+
+#find the second largest number in a tuple
+s1 = (1,4,6,5,3,2)
+lar=0
+sec=0
+for x in s1:
+    if x>lar:
+        sec = lar
+        lar = x
+    elif x>sec:
+        sec = x
+print(sec)
+
+#find the second largest number in a tuple
+s1 = (1,4,6,5,3,2)
+for x in s1:
+    if x<lar:
+        sec = lar
+        lar = x
+    elif x<sec:
+        sec = x
+print(sec)
+        
+
+#find the diff between max and min
+
+#find the even and odd numbers count in a tuple (using t7)
+t7 = (1,2,3,4,5,6,7,8,9,10)
+even_count = 0
+odd_count = 0
+for x in t7:
+    if x%2 == 0:
+       even_count=even_count+1
+    else:
+        odd_count=odd_count+1
+print("even=",even_count)
+print("odd=",odd_count) 
+
+#create a tuple of student name print using for loop
+for x in tup:
+    print(x)
+
+#create a tuple of marks only print marks graterthen 50
+marks = (50,40,60,70,80,90,35,100)
+for x in marks:
+    if x>50:
+        print(x)
+
+#create a tuple of numbers and print only even numbers
+even_num = (1,2,3,4,5,6,7,8,9,10)
+for x in even_num:
+    if x%2 == 0:
+        print(x)
+
+#create a tuple of numbers and print only even numbers
+even_num = (1,2,3,4,5,6,7,8,9,10)
+for x in even_num:
+    if x%2 == 0:
+        print(x)
+
+#create a tuple of numbers and print only even numbers
+even_num = (1,2,3,4,5,6,7,8,9,10)
+for x in even_num:
+    if x%2 == 0:
+        print(x)
+
+#create a tuple of numbers and print only even numbers
+even_num = (1,2,3,4,5,6,7,8,9,10)
+for x in even_num:
+    if x%2 == 0:
+        print(x)
+
+#create a tuple of numbers and print only even numbers
+num = (1,2,3,4,5,6,7,8,9,10)
+for x in num:
+    if x%2 == 0:
+        print(x)
+
+# create a tuple of num and print only odd num
+for x in num:
+    if x%2 != 0:
+        print(x)
+
+#create a nested tuple of student details(name,course,marks)
+student = (("name","yashu"),
+           ("marks","99"),
+           ("corse","CSE"))
+for x in student:
+    print(x[0],x[1])

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e8f5e9, #f7fdf8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            width: 330px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #43a047;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2e7d32;
+        }
+
+        #result {
+            margin-top: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Loan Eligibility</h2>
+        <input id="age" type="number" placeholder="Enter your age">
+        <input id="salary" type="number" placeholder="Enter your salary">
+        <input id="cibil" type="number" placeholder="Enter your CIBIL score">
+        <button onclick="checkEligibility()">Check Eligibility</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkEligibility() {
+            const age = parseInt(document.getElementById("age").value);
+            const salary = parseFloat(document.getElementById("salary").value);
+            const cibilScore = parseInt(document.getElementById("cibil").value);
+            const resultBox = document.getElementById("result");
+
+            if (isNaN(age) || isNaN(salary) || isNaN(cibilScore)) {
+                resultBox.innerText = "Please enter valid values.";
+                return;
+            }
+
+            if (age >= 20 && age < 74 && salary >= 250000 && salary <= 360000 && cibilScore > 700 && cibilScore <= 900) {
+                resultBox.innerText = "You are eligible for the loan.";
+            } else {
+                resultBox.innerText = "You are not eligible for the loan.";
+            }
+        }
+    </script>
+</body>
+</html>

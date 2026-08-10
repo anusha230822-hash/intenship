@@ -1,0 +1,1 @@
+Assignment 21: Explain string checking methods.

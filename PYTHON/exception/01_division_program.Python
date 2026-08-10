@@ -1,0 +1,11 @@
+# Program 1: Division Program
+
+try:
+    first_number = float(input("Enter first number: "))
+    second_number = float(input("Enter second number: "))
+    result = first_number / second_number
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+except ValueError:
+    print("Please enter valid numbers.")

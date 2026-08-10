@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Indigapalli Anusha | Portfolio</title>
+
+<meta name="description"
+content="Professional Portfolio of Indigapalli Anusha | Front End Developer | Canva Designer | Data Entry">
+
+<link rel="icon" href="images/logo.png">
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- Google Font -->
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- AOS -->
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+rel="stylesheet">
+
+<style>
+/*=========================================
+    INDIGAPALLI ANUSHA PORTFOLIO
+    Premium Black + Gold Theme
+==========================================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+
+--bg:#0d0d0d;
+--bg2:#111111;
+--card:#181818;
+
+--gold:#D4AF37;
+--gold2:#f7d774;
+--white:#ffffff;
+--gray:#b8b8b8;
+
+--shadow:0 10px 35px rgba(0,0,0,.35);
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:var(--bg);
+
+color:var(--white);
+
+overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(var(--gold),#9b7b16);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+/* Loader */
+
+#loader{
+
+position:fixed;
+
+width:100%;
+
+height:100vh;
+
+background:#000;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+}
+
+.spinner{
+
+width:70px;
+
+height:70px;
+
+border:6px solid #333;
+
+border-top:6px solid var(--gold);
+
+border-radius:50%;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* Navbar */
+
+.navbar{
+
+background:rgba(0,0,0,.65);
+
+backdrop-filter:blur(18px);
+
+padding:18px 0;
+
+transition:.4s;
+
+}
+
+.navbar-brand{
+
+font-size:30px;
+
+font-weight:700;
+
+color:white;
+
+}
+
+.navbar-brand span{
+
+color:var(--gold);
+
+}
+
+.navbar ul li{
+
+margin-left:22px;
+
+}
+
+.navbar ul li a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:.4s;
+
+}
+
+.navbar ul li a:hover{
+
+color:var(--gold);
+
+}
+
+/* Hero */
+
+#home{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+background:linear-gradient(135deg,#050505,#111);
+
+overflow:hidden;
+
+}
+
+#particles-js{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+top:0;
+
+left:0;
+
+}
+
+.hero-image{
+
+position:relative;
+
+display:inline-block;
+
+}
+
+.hero-image img{
+
+width:380px;
+
+height:380px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:6px solid var(--gold);
+
+box-shadow:0 0 60px rgba(212,175,55,.4);
+
+transition:.5s;
+
+}
+
+.hero-image img:hover{
+
+transform:scale(1.04);
+
+}
+
+.circle1{
+
+position:absolute;
+
+width:420px;
+
+height:420px;
+
+border:2px dashed var(--gold);
+
+border-radius:50%;
+
+top:-20px;
+
+left:-20px;
+
+animation:rotate 15s linear infinite;
+
+}
+
+.circle2{
+
+position:absolute;
+
+width:460px;
+
+height:460px;
+
+border:2px dashed rgba(255,255,255,.15);
+
+border-radius:50%;
+
+top:-40px;
+
+left:-40px;
+
+animation:rotate2 25s linear infinite;
+
+}
+
+@keyframes rotate{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes rotate2{
+
+100%{
+
+transform:rotate(-360deg);
+
+}
+
+}
+
+#home h5{
+
+color:var(--gold);
+
+font-size:24px;
+
+}
+
+#home h1{
+
+font-size:65px;
+
+font-weight:800;
+
+margin:15px 0;
+
+}
+
+#home h1 span{
+
+color:var(--gold);
+
+}
+
+#home h3{
+
+font-size:28px;
+
+margin-bottom:25px;
+
+color:#ddd;
+
+}
+
+#home p{
+
+line-height:32px;
+
+color:var(--gray);
+
+margin-bottom:35px;
+
+}
+
+/* Buttons */
+
+.btn1{
+
+background:linear-gradient(45deg,var(--gold),#b88b16);
+
+padding:14px 34px;
+
+border-radius:40px;
+
+color:#000;
+
+font-weight:700;
+
+text-decoration:none;
+
+display:inline-block;
+
+transition:.4s;
+
+box-shadow:0 10px 25px rgba(212,175,55,.4);
+
+}
+
+.btn1:hover{
+
+transform:translateY(-4px);
+
+}
+
+.btn2{
+
+border:2px solid var(--gold);
+
+padding:14px 34px;
+
+margin-left:15px;
+
+border-radius:40px;
+
+color:white;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+.btn2:hover{
+
+background:var(--gold);
+
+color:#000;
+
+}
+
+/* Social */
+
+.social-icons{
+
+margin-top:35px;
+
+}
+
+.social-icons a{
+
+width:48px;
+
+height:48px;
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+background:#1b1b1b;
+
+color:var(--gold);
+
+margin-right:10px;
+
+font-size:20px;
+
+transition:.4s;
+
+}
+
+.social-icons a:hover{
+
+background:var(--gold);
+
+color:#000;
+
+transform:translateY(-6px);
+
+}
+
+/* Section */
+
+section{
+
+padding:110px 0;
+
+}
+
+.section-title{
+
+color:var(--gold);
+
+font-weight:600;
+
+letter-spacing:3px;
+
+}
+
+.section-heading{
+
+font-size:42px;
+
+font-weight:700;
+
+margin-top:10px;
+
+margin-bottom:20px;
+
+}
+
+/* About */
+
+#about{
+
+background:#111;
+
+}
+
+#about img{
+
+border:5px solid rgba(212,175,55,.2);
+
+box-shadow:var(--shadow);
+
+transition:.5s;
+
+}
+
+#about img:hover{
+
+transform:scale(1.03);
+
+}
+
+.info-list{
+
+list-style:none;
+
+padding-left:0;
+
+}
+
+.info-list li{
+
+padding:10px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+color:#ccc;
+
+}
+
+.info-list strong{
+
+color:var(--gold);
+
+}
+/*=========================================
+        SKILLS SECTION
+=========================================*/
+
+#skills{
+    background:#0f0f0f;
+}
+
+.skill-item{
+    margin-bottom:30px;
+}
+
+.skill-item span{
+    font-weight:600;
+    color:#fff;
+}
+
+.progress{
+    height:12px;
+    margin-top:10px;
+    background:#222;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    border-radius:50px;
+    animation:progressAnimation 2s ease;
+}
+
+.html{
+    background:linear-gradient(90deg,#ff9800,#ffc107);
+}
+
+.css{
+    background:linear-gradient(90deg,#2196f3,#64b5f6);
+}
+
+.bootstrap{
+    background:linear-gradient(90deg,#7952b3,#b388ff);
+}
+
+.js{
+    background:linear-gradient(90deg,#f7df1e,#ffe66d);
+}
+
+@keyframes progressAnimation{
+
+0%{
+width:0;
+}
+
+}
+
+.skill-card{
+
+background:#181818;
+
+padding:35px;
+
+text-align:center;
+
+border-radius:20px;
+
+transition:.4s;
+
+border:1px solid rgba(212,175,55,.15);
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.skill-card i{
+
+font-size:45px;
+
+color:var(--gold);
+
+margin-bottom:18px;
+
+}
+
+.skill-card h5{
+
+color:#fff;
+
+font-weight:600;
+
+}
+
+.skill-card:hover{
+
+transform:translateY(-10px);
+
+background:#1e1e1e;
+
+box-shadow:0 15px 35px rgba(212,175,55,.2);
+
+}
+
+/*=========================================
+        SERVICES
+=========================================*/
+
+#services{
+
+background:#111;
+
+}
+
+.service-card{
+
+background:#181818;
+
+padding:40px 30px;
+
+border-radius:25px;
+
+text-align:center;
+
+transition:.4s;
+
+border:1px solid rgba(212,175,55,.15);
+
+height:100%;
+
+}
+
+.service-card i{
+
+font-size:50px;
+
+color:var(--gold);
+
+margin-bottom:25px;
+
+}
+
+.service-card h4{
+
+margin-bottom:18px;
+
+font-weight:700;
+
+}
+
+.service-card p{
+
+color:#bdbdbd;
+
+line-height:28px;
+
+}
+
+.service-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 20px 40px rgba(212,175,55,.18);
+
+border-color:var(--gold);
+
+}
+
+/*=========================================
+        PROJECTS
+=========================================*/
+
+#projects{
+
+background:#0d0d0d;
+
+}
+
+.project-card{
+
+background:#181818;
+
+overflow:hidden;
+
+border-radius:20px;
+
+transition:.5s;
+
+}
+
+.project-card img{
+
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.project-content{
+
+padding:25px;
+
+}
+
+.project-content h4{
+
+color:#fff;
+
+margin-bottom:10px;
+
+}
+
+.project-content p{
+
+color:#bbb;
+
+}
+
+.project-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 20px 40px rgba(212,175,55,.2);
+
+}
+
+.project-card:hover img{
+
+transform:scale(1.1);
+
+}
+
+/*=========================================
+        TIMELINE
+=========================================*/
+
+.timeline{
+
+position:relative;
+
+padding-left:35px;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:12px;
+
+top:0;
+
+width:3px;
+
+height:100%;
+
+background:var(--gold);
+
+}
+
+.timeline-item{
+
+position:relative;
+
+margin-bottom:40px;
+
+}
+
+.timeline-icon{
+
+position:absolute;
+
+left:-4px;
+
+top:0;
+
+width:35px;
+
+height:35px;
+
+border-radius:50%;
+
+background:var(--gold);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#000;
+
+font-size:18px;
+
+}
+
+.timeline-content{
+
+margin-left:55px;
+
+background:#181818;
+
+padding:25px;
+
+border-radius:15px;
+
+border:1px solid rgba(212,175,55,.2);
+
+}
+
+.timeline-content h4{
+
+color:#fff;
+
+}
+
+.timeline-content h6{
+
+color:var(--gold);
+
+margin:10px 0;
+
+}
+
+.timeline-content p{
+
+color:#bdbdbd;
+
+}
+
+/*=========================================
+        COUNTERS
+=========================================*/
+
+.counter-section{
+
+background:#111;
+
+padding:80px 0;
+
+}
+
+.counter-box{
+
+padding:30px;
+
+background:#181818;
+
+border-radius:20px;
+
+transition:.4s;
+
+}
+
+.counter-box h2{
+
+font-size:50px;
+
+color:var(--gold);
+
+font-weight:700;
+
+}
+
+.counter-box p{
+
+margin-top:10px;
+
+color:#ccc;
+
+}
+
+.counter-box:hover{
+
+transform:translateY(-10px);
+
+}
+
+/*=========================================
+        GALLERY
+=========================================*/
+
+#gallery{
+
+background:#0d0d0d;
+
+}
+
+.gallery-img{
+
+width:100%;
+
+height:420px;
+
+object-fit:cover;
+
+transition:.5s;
+
+cursor:pointer;
+
+border:3px solid rgba(212,175,55,.15);
+
+}
+
+.gallery-img:hover{
+
+transform:scale(1.05);
+
+border-color:var(--gold);
+
+box-shadow:0 15px 35px rgba(212,175,55,.25);
+
+}
+
+/*=========================================
+        ANIMATION
+=========================================*/
+
+.fade-up{
+
+animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+/*=========================================
+        CONTACT SECTION
+=========================================*/
+
+#contact{
+    background:#111;
+}
+
+.contact-info{
+    background:#181818;
+    padding:40px;
+    border-radius:20px;
+    border:1px solid rgba(212,175,55,.15);
+    height:100%;
+}
+
+.contact-info h4{
+    color:var(--gold);
+    margin-bottom:25px;
+}
+
+.contact-info p{
+    color:#ccc;
+    margin-bottom:18px;
+    font-size:16px;
+}
+
+.contact-info i{
+    color:var(--gold);
+    margin-right:10px;
+}
+
+form{
+    background:#181818;
+    padding:40px;
+    border-radius:20px;
+    border:1px solid rgba(212,175,55,.15);
+}
+
+.form-control{
+    background:#0f0f0f;
+    border:1px solid rgba(212,175,55,.15);
+    color:#fff;
+    padding:15px;
+}
+
+.form-control:focus{
+    background:#0f0f0f;
+    color:#fff;
+    border-color:var(--gold);
+    box-shadow:0 0 10px rgba(212,175,55,.35);
+}
+
+.form-control::placeholder{
+    color:#999;
+}
+
+/*=========================================
+        FOOTER
+=========================================*/
+
+footer{
+    background:#080808;
+    padding:60px 0 30px;
+}
+
+footer h3{
+    color:#fff;
+    font-size:34px;
+    font-weight:700;
+}
+
+footer h3 span{
+    color:var(--gold);
+}
+
+footer p{
+    color:#aaa;
+    margin-top:15px;
+}
+
+.footer-social{
+    margin:30px 0;
+}
+
+.footer-social a{
+    width:48px;
+    height:48px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    background:#181818;
+    color:var(--gold);
+    border-radius:50%;
+    margin:0 8px;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.footer-social a:hover{
+    background:var(--gold);
+    color:#000;
+    transform:translateY(-8px);
+}
+
+/*=========================================
+        SCROLL TOP BUTTON
+=========================================*/
+
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:var(--gold);
+    color:#000;
+    font-size:22px;
+    cursor:pointer;
+    display:none;
+    z-index:999;
+    transition:.4s;
+}
+
+#topBtn:hover{
+    transform:translateY(-6px);
+}
+
+/*=========================================
+        GLASS EFFECT
+=========================================*/
+
+.glass{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+/*=========================================
+        FLOATING SHAPES
+=========================================*/
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::before{
+    background:rgba(212,175,55,.08);
+    top:-80px;
+    left:-80px;
+}
+
+body::after{
+    background:rgba(212,175,55,.06);
+    bottom:-80px;
+    right:-80px;
+}
+
+/*=========================================
+        HOVER EFFECTS
+=========================================*/
+
+img{
+    transition:.5s;
+}
+
+img:hover{
+    transform:scale(1.02);
+}
+
+a{
+    transition:.3s;
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:991px){
+
+#home{
+    text-align:center;
+}
+
+.hero-image{
+    margin-top:50px;
+}
+
+.hero-image img{
+    width:300px;
+    height:300px;
+}
+
+.circle1{
+    width:330px;
+    height:330px;
+}
+
+.circle2{
+    width:360px;
+    height:360px;
+}
+
+#home h1{
+    font-size:48px;
+}
+
+.section-heading{
+    font-size:34px;
+}
+
+.navbar ul{
+    background:#111;
+    padding:20px;
+    border-radius:10px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-image img{
+    width:250px;
+    height:250px;
+}
+
+.circle1{
+    width:280px;
+    height:280px;
+}
+
+.circle2{
+    width:310px;
+    height:310px;
+}
+
+#home h1{
+    font-size:38px;
+}
+
+#home h3{
+    font-size:22px;
+}
+
+.btn1,
+.btn2{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    text-align:center;
+}
+
+.section-heading{
+    font-size:28px;
+}
+
+.gallery-img{
+    height:300px;
+}
+
+}
+
+@media(max-width:576px){
+
+.hero-image img{
+    width:220px;
+    height:220px;
+}
+
+.circle1,
+.circle2{
+    display:none;
+}
+
+#home h1{
+    font-size:32px;
+}
+
+#home p{
+    font-size:15px;
+}
+
+.contact-info,
+form{
+    padding:25px;
+}
+
+.skill-card,
+.service-card{
+    padding:25px;
+}
+
+.counter-box{
+    margin-bottom:20px;
+}
+
+}
+
+/*=========================================
+        END OF STYLE.CSS
+=========================================*/
+</style>
+
+</head>
+
+<body>
+
+<!-- Loader -->
+
+<div id="loader">
+
+<div class="spinner"></div>
+
+</div>
+
+<!-- Scroll Top -->
+
+<button id="topBtn">
+
+<i class="bi bi-arrow-up"></i>
+
+</button>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">
+
+Anusha<span>.</span>
+
+</a>
+
+<button class="navbar-toggler"
+
+data-bs-toggle="collapse"
+
+data-bs-target="#menu">
+
+<i class="bi bi-list"></i>
+
+</button>
+
+<div class="collapse navbar-collapse"
+
+id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
+<li><a href="#education">Education</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section id="home">
+
+<div id="particles-js"></div>
+
+<div class="container">
+
+<div class="row align-items-center min-vh-100">
+
+<div class="col-lg-6"
+
+data-aos="fade-right">
+
+<h5>Hello, I'm</h5>
+
+<h1>
+
+Indigapalli
+
+<span>Anusha</span>
+
+</h1>
+
+<h3>
+
+<span id="typing"></span>
+
+</h3>
+
+<p>
+
+Final Year Diploma Student specializing in Front-End Development,
+Data Entry, Canva Designing, and AI Poster Creation.
+
+I enjoy building beautiful websites and creative digital experiences.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn1">
+
+Download Resume
+
+</a>
+
+<a href="#contact"
+
+class="btn2">
+
+Hire Me
+
+</a>
+
+</div>
+
+<div class="social-icons">
+
+<a href="#"><i class="bi bi-github"></i></a>
+
+<a href="#"><i class="bi bi-linkedin"></i></a>
+
+<a href="#"><i class="bi bi-instagram"></i></a>
+
+<a href="#"><i class="bi bi-envelope-fill"></i></a>
+
+</div>
+
+</div>
+
+<div class="col-lg-6 text-center"
+
+data-aos="zoom-in">
+
+<div class="hero-image">
+
+<img src="images/hero.jpg"
+
+class="img-fluid"
+
+alt="Anusha">
+
+<div class="circle1"></div>
+
+<div class="circle2"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-5"
+
+data-aos="fade-right">
+
+<img src="images/about.jpg"
+
+class="img-fluid rounded-4 shadow"
+
+alt="About">
+
+</div>
+
+<div class="col-lg-7"
+
+data-aos="fade-left">
+
+<h6>
+
+ABOUT ME
+
+</h6>
+
+<h2>
+
+Creative Front-End Developer
+
+</h2>
+
+<p>
+
+Hi!
+
+I'm
+
+<strong>Indigapalli Anusha</strong>,
+
+a Final Year Diploma student passionate about web development,
+
+responsive UI design,
+
+Canva designing,
+
+AI poster creation,
+
+and professional data entry services.
+
+</p>
+
+<p>
+
+I love creating attractive websites using
+
+HTML,
+
+CSS,
+
+Bootstrap,
+
+and JavaScript while continuously improving my skills.
+
+</p>
+
+<div class="row mt-4">
+
+<div class="col-md-6">
+
+<ul class="info-list">
+
+<li>
+
+<strong>Name :</strong>
+
+Indigapalli Anusha
+
+</li>
+
+<li>
+
+<strong>Education :</strong>
+
+Diploma Final Year
+
+</li>
+
+<li>
+
+<strong>Specialization :</strong>
+
+Computer Engineering
+
+</li>
+
+<li>
+
+<strong>Location :</strong>
+
+Andhra Pradesh
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="col-md-6">
+
+<ul class="info-list">
+
+<li>
+
+<strong>Role :</strong>
+
+Front-End Developer
+
+</li>
+
+<li>
+
+<strong>Experience :</strong>
+
+Student Projects
+
+</li>
+
+<li>
+
+<strong>Freelancing :</strong>
+
+Available
+
+</li>
+
+<li>
+
+<strong>Languages :</strong>
+
+English, Telugu
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="mt-4">
+
+<a href="#projects"
+
+class="btn1">
+
+View My Work
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Skills section starts in Part 1B -->
+
+<!-- ========================= -->
+<!-- SKILLS -->
+<!-- ========================= -->
+
+<section id="skills" class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h6 class="section-title">MY SKILLS</h6>
+            <h2 class="section-heading">Professional Skills</h2>
+            <p>I love creating modern websites and attractive digital designs.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+
+                <div class="skill-item" data-aos="fade-right">
+                    <div class="d-flex justify-content-between">
+                        <span>HTML5</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar html" style="width:95%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-aos="fade-right">
+                    <div class="d-flex justify-content-between">
+                        <span>CSS3</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar css" style="width:92%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-aos="fade-right">
+                    <div class="d-flex justify-content-between">
+                        <span>Bootstrap</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bootstrap" style="width:90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item" data-aos="fade-right">
+                    <div class="d-flex justify-content-between">
+                        <span>JavaScript</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar js" style="width:80%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="row g-4">
+
+                    <div class="col-6">
+                        <div class="skill-card" data-aos="zoom-in">
+                            <i class="fa-brands fa-html5"></i>
+                            <h5>HTML</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="skill-card" data-aos="zoom-in">
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <h5>CSS</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="skill-card" data-aos="zoom-in">
+                            <i class="fa-brands fa-bootstrap"></i>
+                            <h5>Bootstrap</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="skill-card" data-aos="zoom-in">
+                            <i class="fa-brands fa-js"></i>
+                            <h5>JavaScript</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="skill-card" data-aos="zoom-in">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                            <h5>Canva</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="skill-card" data-aos="zoom-in">
+                            <i class="fa-solid fa-robot"></i>
+                            <h5>AI Tools</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SERVICES -->
+<!-- ========================= -->
+
+<section id="services" class="py-5">
+
+<div class="container">
+
+<div class="text-center mb-5" data-aos="fade-up">
+
+<h6 class="section-title">SERVICES</h6>
+
+<h2 class="section-heading">What I Can Do</h2>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-4">
+
+<div class="service-card" data-aos="zoom-in">
+
+<i class="fa-solid fa-code"></i>
+
+<h4>Front-End Development</h4>
+
+<p>Responsive websites using HTML, CSS, Bootstrap and JavaScript.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-4">
+
+<div class="service-card" data-aos="zoom-in">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+<h4>Landing Pages</h4>
+
+<p>Professional landing pages for businesses and startups.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-4">
+
+<div class="service-card" data-aos="zoom-in">
+
+<i class="fa-solid fa-image"></i>
+
+<h4>Canva Designing</h4>
+
+<p>Social media posters, banners and promotional graphics.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-4">
+
+<div class="service-card" data-aos="zoom-in">
+
+<i class="fa-solid fa-robot"></i>
+
+<h4>AI Poster Design</h4>
+
+<p>Creative AI-generated posters and digital artwork.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-4">
+
+<div class="service-card" data-aos="zoom-in">
+
+<i class="fa-solid fa-keyboard"></i>
+
+<h4>Data Entry</h4>
+
+<p>Fast and accurate MS Excel, Word and online data entry services.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-4">
+
+<div class="service-card" data-aos="zoom-in">
+
+<i class="fa-solid fa-user"></i>
+
+<h4>Portfolio Website</h4>
+
+<p>Personal portfolio websites for students and professionals.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PROJECTS -->
+<!-- ========================= -->
+
+<section id="projects" class="py-5">
+
+<div class="container">
+
+<div class="text-center mb-5" data-aos="fade-up">
+
+<h6 class="section-title">PROJECTS</h6>
+
+<h2 class="section-heading">Recent Work</h2>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-4">
+
+<div class="project-card" data-aos="fade-up">
+
+<img src="images/project1.jpg" class="img-fluid">
+
+<div class="project-content">
+
+<h4>Personal Portfolio</h4>
+
+<p>Modern responsive portfolio website.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-4">
+
+<div class="project-card" data-aos="fade-up">
+
+<img src="images/project2.jpg" class="img-fluid">
+
+<div class="project-content">
+
+<h4>Business Website</h4>
+
+<p>Responsive landing page for local business.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-4">
+
+<div class="project-card" data-aos="fade-up">
+
+<img src="images/project3.jpg" class="img-fluid">
+
+<div class="project-content">
+
+<h4>Canva Designs</h4>
+
+<p>Creative posters and social media graphics.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- EDUCATION -->
+<!-- ========================= -->
+
+<section id="education" class="py-5">
+
+<div class="container">
+
+<div class="text-center mb-5" data-aos="fade-up">
+
+<h6 class="section-title">EDUCATION</h6>
+
+<h2 class="section-heading">My Journey</h2>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item" data-aos="fade-right">
+
+<div class="timeline-icon">
+<i class="fas fa-graduation-cap"></i>
+</div>
+
+<div class="timeline-content">
+
+<h4>Diploma in Computer Engineering</h4>
+
+<h6>Final Year Student</h6>
+
+<p>
+
+Learning Front-End Development, Responsive Web Design,
+JavaScript, Data Entry, Canva Designing and AI Tools.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ACHIEVEMENTS -->
+<!-- ========================= -->
+
+<section class="counter-section">
+
+<div class="container">
+
+<div class="row text-center">
+
+<div class="col-md-3">
+
+<div class="counter-box">
+
+<h2 class="counter" data-target="15">0</h2>
+
+<p>Projects</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="counter-box">
+
+<h2 class="counter" data-target="10">0</h2>
+
+<p>Skills</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="counter-box">
+
+<h2 class="counter" data-target="100">0</h2>
+
+<p>Learning Hours</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="counter-box">
+
+<h2 class="counter" data-target="5">0</h2>
+
+<p>Design Tools</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- GALLERY -->
+<!-- ========================= -->
+
+<section id="gallery" class="py-5">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h6 class="section-title">GALLERY</h6>
+
+<h2 class="section-heading">My Photos</h2>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<img src="images/gallery1.jpg" class="gallery-img img-fluid rounded-4">
+
+</div>
+
+<div class="col-md-4">
+
+<img src="images/gallery2.jpg" class="gallery-img img-fluid rounded-4">
+
+</div>
+
+<div class="col-md-4">
+
+<img src="images/gallery3.jpg" class="gallery-img img-fluid rounded-4">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CONTACT -->
+<!-- ========================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h6 class="section-title">CONTACT</h6>
+
+<h2 class="section-heading">
+
+Let's Work Together
+
+</h2>
+
+</div>
+
+<div class="row">
+
+<div class="col-lg-5">
+
+<div class="contact-info">
+
+<h4>Contact Information</h4>
+
+<p>
+
+<i class="bi bi-person-circle"></i>
+
+<strong>Name :</strong>
+
+Indigapalli Anusha
+
+</p>
+
+<p>
+
+<i class="bi bi-mortarboard-fill"></i>
+
+Diploma Final Year Student
+
+</p>
+
+<p>
+
+<i class="bi bi-code-slash"></i>
+
+Front-End Developer
+
+</p>
+
+<p>
+
+<i class="bi bi-palette-fill"></i>
+
+Canva & AI Designer
+
+</p>
+
+<p>
+
+<i class="bi bi-keyboard-fill"></i>
+
+Data Entry Specialist
+
+</p>
+
+<p>
+
+<i class="bi bi-geo-alt-fill"></i>
+
+Andhra Pradesh, India
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-7">
+
+<form>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<input
+type="text"
+class="form-control"
+placeholder="Your Name">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<input
+type="email"
+class="form-control"
+placeholder="Email">
+
+</div>
+
+</div>
+
+<input
+type="text"
+class="form-control mb-3"
+placeholder="Subject">
+
+<textarea
+class="form-control mb-3"
+rows="6"
+placeholder="Your Message"></textarea>
+
+<button class="btn1">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<div class="container text-center">
+
+<h3>
+
+Indigapalli <span>Anusha</span>
+
+</h3>
+
+<p>
+
+Front-End Developer • Canva Designer • AI Poster Creator • Data Entry
+
+</p>
+
+<div class="footer-social">
+
+<a href="#"><i class="bi bi-github"></i></a>
+
+<a href="#"><i class="bi bi-linkedin"></i></a>
+
+<a href="#"><i class="bi bi-instagram"></i></a>
+
+<a href="#"><i class="bi bi-envelope-fill"></i></a>
+
+</div>
+
+<hr>
+
+<p>
+
+© 2026 Indigapalli Anusha
+
+All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

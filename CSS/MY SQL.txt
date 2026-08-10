@@ -1,0 +1,688 @@
+mysql> CREATE DATABASE mysql_joins_e;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE mysql_joins_e;
+Database changed
+mysql> CREATE TABLE department(
+    -> dept_id INT PRIMARY KEY,
+    -> dept_name VARCHAR(50),
+    -> location VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO department VALUES
+    -> (1,'HR','Hyderabad'),
+    -> (2,'IT','Bangalore'),
+    -> (3,'Finance','Chennai'),
+    -> (4,'Marketing','Mumbai'),
+    -> (5,'Sales','Delhi');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE employee (
+    -> emp_id INT PRIMARY KEY,
+    -> emp_name VARCHAR(50),
+    -> gender VARCHAR(10),
+    -> salary DECIMAL(10,2),
+    -> hire_date DATE,
+    -> dept_id INT
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO employee VALUES
+    -> (101,'Rahul','Male',45000,'2023-01-10',1),
+    -> (102,'Priya','Female',60000,'2022-03-15',2),
+    -> (103,'Amit','Male',55000,'2021-05-20',2),
+    -> (104,'Sneha','Female',50000,'2020-08-11',3),
+    -> (105,'Kiran','Male',70000,'2019-09-18',4),
+    -> (106,'Anjali','Female',48000,'2022-11-25',NULL),
+    -> (107,'Ravi','Male',40000,'2024-01-05',2),
+    -> (108,'Pooja','Female',65000,'2021-12-12',5),
+    -> (109,'Arjun','Male',52000,'2023-04-08',NULL),
+    -> (110,'Deepika','Female',58000,'2022-06-14',3);
+Query OK, 10 rows affected (0.02 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE project (
+    -> project_id INT PRIMARY KEY,
+    -> project_name VARCHAR(100),
+    -> start_date DATE,
+    -> emp_id INT
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO project VALUES
+    -> (201,'Hospital Management System','2024-01-10',101),
+    -> (202,'E-Commerce Website','2024-02-15',102),
+    -> (203,'Payroll System','2024-03-20',104),
+    -> (204,'Inventory Management','2024-04-12',105),
+    -> (205,'AI Chatbot','2024-05-01',107),
+    -> (206,'Banking Portal','2024-06-10',110),
+    -> (207,'School ERP','2024-07-05',NULL),
+    -> (208,'CRM Application','2024-08-08',108);
+Query OK, 8 rows affected (0.02 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE client (
+    -> client_id INT PRIMARY KEY,
+    -> client_name VARCHAR(100),
+    -> country VARCHAR(50),
+    -> project_id INT
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO client VALUES
+    -> (1,'ABC Technologies','India',201),
+    -> (2,'Global Soft','USA',202),
+    -> (3,'NextGen Solutions','Canada',203),
+    -> (4,'Smart Systems','UK',204),
+    -> (5,'Tech Innovators','Australia',205),
+    -> (6,'Future Corp','Germany',208),
+    -> (7,'Digital World','India',NULL);
+Query OK, 7 rows affected (0.01 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> SELECT e.emp_name, d.dept_name
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id;
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Rahul    | HR        |
+| Priya    | IT        |
+| Amit     | IT        |
+| Sneha    | Finance   |
+| Kiran    | Marketing |
+| Ravi     | IT        |
+| Pooja    | Sales     |
+| Deepika  | Finance   |
++----------+-----------+
+8 rows in set (0.03 sec)
+
+mysql> SELECT e.emp_id, e.emp_name, d.location
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id;
++--------+----------+-----------+
+| emp_id | emp_name | location  |
++--------+----------+-----------+
+|    101 | Rahul    | Hyderabad |
+|    102 | Priya    | Bangalore |
+|    103 | Amit     | Bangalore |
+|    104 | Sneha    | Chennai   |
+|    105 | Kiran    | Mumbai    |
+|    107 | Ravi     | Bangalore |
+|    108 | Pooja    | Delhi     |
+|    110 | Deepika  | Chennai   |
++--------+----------+-----------+
+8 rows in set (0.02 sec)
+
+mysql> SELECT e.*
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> WHERE d.dept_name = 'IT';
++--------+----------+--------+----------+------------+---------+
+| emp_id | emp_name | gender | salary   | hire_date  | dept_id |
++--------+----------+--------+----------+------------+---------+
+|    102 | Priya    | Female | 60000.00 | 2022-03-15 |       2 |
+|    103 | Amit     | Male   | 55000.00 | 2021-05-20 |       2 |
+|    107 | Ravi     | Male   | 40000.00 | 2024-01-05 |       2 |
++--------+----------+--------+----------+------------+---------+
+3 rows in set (0.05 sec)
+
+mysql> SELECT e.emp_name, d.dept_name, e.salary
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id;
++----------+-----------+----------+
+| emp_name | dept_name | salary   |
++----------+-----------+----------+
+| Rahul    | HR        | 45000.00 |
+| Priya    | IT        | 60000.00 |
+| Amit     | IT        | 55000.00 |
+| Sneha    | Finance   | 50000.00 |
+| Kiran    | Marketing | 70000.00 |
+| Ravi     | IT        | 40000.00 |
+| Pooja    | Sales     | 65000.00 |
+| Deepika  | Finance   | 58000.00 |
++----------+-----------+----------+
+8 rows in set (0.02 sec)
+
+mysql> SELECT e.emp_name, d.dept_name
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> WHERE e.gender = 'Female';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Priya    | IT        |
+| Sneha    | Finance   |
+| Pooja    | Sales     |
+| Deepika  | Finance   |
++----------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name
+    -> FROM employees e
+    -> INNER JOIN departments d
+    -> ON e.dept_id = d.dept_id
+    -> WHERE d.dept_name = 'Finance';
+ERROR 1146 (42S02): Table 'mysql_joins_e.employees' doesn't exist
+mysql> SELECT e.emp_name
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> WHERE d.dept_name = 'Finance';
++----------+
+| emp_name |
++----------+
+| Sneha    |
+| Deepika  |
++----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name, d.dept_name, e.salary
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> WHERE e.salary > 55000;
++----------+-----------+----------+
+| emp_name | dept_name | salary   |
++----------+-----------+----------+
+| Priya    | IT        | 60000.00 |
+| Kiran    | Marketing | 70000.00 |
+| Pooja    | Sales     | 65000.00 |
+| Deepika  | Finance   | 58000.00 |
++----------+-----------+----------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name, d.dept_name
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> WHERE e.hire_date > '2022-01-01';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Rahul    | HR        |
+| Priya    | IT        |
+| Ravi     | IT        |
+| Deepika  | Finance   |
++----------+-----------+
+4 rows in set (0.02 sec)
+
+mysql> SELECT e.emp_name, d.location
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> ORDER BY e.emp_name ASC;
++----------+-----------+
+| emp_name | location  |
++----------+-----------+
+| Amit     | Bangalore |
+| Deepika  | Chennai   |
+| Kiran    | Mumbai    |
+| Pooja    | Delhi     |
+| Priya    | Bangalore |
+| Rahul    | Hyderabad |
+| Ravi     | Bangalore |
+| Sneha    | Chennai   |
++----------+-----------+
+8 rows in set (0.02 sec)
+
+mysql> SELECT e.emp_name, d.dept_name, d.location
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id;
++----------+-----------+-----------+
+| emp_name | dept_name | location  |
++----------+-----------+-----------+
+| Rahul    | HR        | Hyderabad |
+| Priya    | IT        | Bangalore |
+| Amit     | IT        | Bangalore |
+| Sneha    | Finance   | Chennai   |
+| Kiran    | Marketing | Mumbai    |
+| Ravi     | IT        | Bangalore |
+| Pooja    | Sales     | Delhi     |
+| Deepika  | Finance   | Chennai   |
++----------+-----------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name, d.dept_name
+    -> FROM employee e
+    -> LEFT JOIN department d
+    -> ON e.dept_id = d.dept_id;
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Rahul    | HR        |
+| Priya    | IT        |
+| Amit     | IT        |
+| Sneha    | Finance   |
+| Kiran    | Marketing |
+| Anjali   | NULL      |
+| Ravi     | IT        |
+| Pooja    | Sales     |
+| Arjun    | NULL      |
+| Deepika  | Finance   |
++----------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name
+    -> FROM employee e
+    -> LEFT JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> WHERE d.dept_id IS NULL;
++----------+
+| emp_name |
++----------+
+| Anjali   |
+| Arjun    |
++----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name,
+    -> IFNULL(d.dept_name, 'No Department') AS dept_name
+    -> FROM employee e
+    -> LEFT JOIN department d
+    -> ON e.dept_id = d.dept_id;
++----------+---------------+
+| emp_name | dept_name     |
++----------+---------------+
+| Rahul    | HR            |
+| Priya    | IT            |
+| Amit     | IT            |
+| Sneha    | Finance       |
+| Kiran    | Marketing     |
+| Anjali   | No Department |
+| Ravi     | IT            |
+| Pooja    | Sales         |
+| Arjun    | No Department |
+| Deepika  | Finance       |
++----------+---------------+
+10 rows in set (0.02 sec)
+
+mysql> SELECT e.emp_name, d.location
+    -> FROM employee e
+    -> LEFT JOIN department d
+    -> ON e.dept_id = d.dept_id;
++----------+-----------+
+| emp_name | location  |
++----------+-----------+
+| Rahul    | Hyderabad |
+| Priya    | Bangalore |
+| Amit     | Bangalore |
+| Sneha    | Chennai   |
+| Kiran    | Mumbai    |
+| Anjali   | NULL      |
+| Ravi     | Bangalore |
+| Pooja    | Delhi     |
+| Arjun    | NULL      |
+| Deepika  | Chennai   |
++----------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT d.dept_name,
+    -> COUNT(e.emp_id) AS total_employees
+    -> FROM department d
+    -> LEFT JOIN employee e
+    -> ON d.dept_id = e.dept_id
+    -> GROUP BY d.dept_name;
++-----------+-----------------+
+| dept_name | total_employees |
++-----------+-----------------+
+| HR        |               1 |
+| IT        |               3 |
+| Finance   |               2 |
+| Marketing |               1 |
+| Sales     |               1 |
++-----------+-----------------+
+5 rows in set (0.06 sec)
+
+mysql> SELECT d.dept_name, e.emp_name
+    -> FROM employee e
+    -> RIGHT JOIN department d
+    -> ON e.dept_id = d.dept_id;
++-----------+----------+
+| dept_name | emp_name |
++-----------+----------+
+| HR        | Rahul    |
+| IT        | Ravi     |
+| IT        | Amit     |
+| IT        | Priya    |
+| Finance   | Deepika  |
+| Finance   | Sneha    |
+| Marketing | Kiran    |
+| Sales     | Pooja    |
++-----------+----------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT d.dept_name
+    -> FROM employee e
+    -> RIGHT JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> WHERE e.emp_id IS NULL;
+Empty set (0.00 sec)
+
+mysql> SELECT d.dept_name, e.emp_name
+    -> FROM employee e
+    -> RIGHT JOIN department d
+    -> ON e.dept_id = d.dept_id;
++-----------+----------+
+| dept_name | emp_name |
++-----------+----------+
+| HR        | Rahul    |
+| IT        | Ravi     |
+| IT        | Amit     |
+| IT        | Priya    |
+| Finance   | Deepika  |
+| Finance   | Sneha    |
+| Marketing | Kiran    |
+| Sales     | Pooja    |
++-----------+----------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT d.dept_name, e.salary
+    -> FROM employees e
+    -> RIGHT JOIN departments d
+    -> ON e.dept_id = d.dept_id;
+ERROR 1146 (42S02): Table 'mysql_joins_e.departments' doesn't exist
+mysql> SELECT d.dept_name, e.salary
+    -> FROM employee e
+    -> RIGHT JOIN department d
+    -> ON e.dept_id = d.dept_id;
++-----------+----------+
+| dept_name | salary   |
++-----------+----------+
+| HR        | 45000.00 |
+| IT        | 40000.00 |
+| IT        | 55000.00 |
+| IT        | 60000.00 |
+| Finance   | 58000.00 |
+| Finance   | 50000.00 |
+| Marketing | 70000.00 |
+| Sales     | 65000.00 |
++-----------+----------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT d.dept_name, e.emp_name
+    -> FROM employees e
+    -> RIGHT JOIN departments d
+    -> ON e.dept_id = d.dept_id
+    -> ORDER BY d.dept_name ASC;
+ERROR 1146 (42S02): Table 'mysql_joins_e.departments' doesn't exist
+mysql>
+mysql> SELECT d.dept_name, e.emp_name
+    -> FROM employee e
+    -> RIGHT JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> ORDER BY d.dept_name ASC;
++-----------+----------+
+| dept_name | emp_name |
++-----------+----------+
+| Finance   | Deepika  |
+| Finance   | Sneha    |
+| HR        | Rahul    |
+| IT        | Ravi     |
+| IT        | Amit     |
+| IT        | Priya    |
+| Marketing | Kiran    |
+| Sales     | Pooja    |
++-----------+----------+
+8 rows in set (0.01 sec)
+
+mysql> SELECT d.dept_name, e.emp_name
+    -> FROM employee e
+    -> RIGHT JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> ORDER BY d.dept_name ASC;
++-----------+----------+
+| dept_name | emp_name |
++-----------+----------+
+| Finance   | Deepika  |
+| Finance   | Sneha    |
+| HR        | Rahul    |
+| IT        | Ravi     |
+| IT        | Amit     |
+| IT        | Priya    |
+| Marketing | Kiran    |
+| Sales     | Pooja    |
++-----------+----------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name, p.project_name
+    -> FROM employees e
+    -> INNER JOIN projects p
+    -> ON e.emp_id = p.emp_id;
+ERROR 1146 (42S02): Table 'mysql_joins_e.employees' doesn't exist
+mysql> SELECT e.emp_name, p.project_name
+    -> FROM employee e
+    -> INNER JOIN project p
+    -> ON e.emp_id = p.emp_id;
++----------+----------------------------+
+| emp_name | project_name               |
++----------+----------------------------+
+| Rahul    | Hospital Management System |
+| Priya    | E-Commerce Website         |
+| Sneha    | Payroll System             |
+| Kiran    | Inventory Management       |
+| Ravi     | AI Chatbot                 |
+| Deepika  | Banking Portal             |
+| Pooja    | CRM Application            |
++----------+----------------------------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name, d.dept_name, p.project_name
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> INNER JOIN project p
+    -> ON e.emp_id = p.emp_id;
++----------+-----------+----------------------------+
+| emp_name | dept_name | project_name               |
++----------+-----------+----------------------------+
+| Rahul    | HR        | Hospital Management System |
+| Priya    | IT        | E-Commerce Website         |
+| Sneha    | Finance   | Payroll System             |
+| Kiran    | Marketing | Inventory Management       |
+| Ravi     | IT        | AI Chatbot                 |
+| Deepika  | Finance   | Banking Portal             |
+| Pooja    | Sales     | CRM Application            |
++----------+-----------+----------------------------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT p.project_name, c.client_name
+    -> FROM project p
+    -> INNER JOIN client c
+    -> ON p.project_id = c.project_id;
++----------------------------+-------------------+
+| project_name               | client_name       |
++----------------------------+-------------------+
+| Hospital Management System | ABC Technologies  |
+| E-Commerce Website         | Global Soft       |
+| Payroll System             | NextGen Solutions |
+| Inventory Management       | Smart Systems     |
+| AI Chatbot                 | Tech Innovators   |
+| CRM Application            | Future Corp       |
++----------------------------+-------------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name, p.project_name, c.client_name
+    -> FROM employee e
+    -> INNER JOIN project p
+    -> ON e.emp_id = p.emp_id
+    -> INNER JOIN client c
+    -> ON p.project_id = c.project_id;
++----------+----------------------------+-------------------+
+| emp_name | project_name               | client_name       |
++----------+----------------------------+-------------------+
+| Rahul    | Hospital Management System | ABC Technologies  |
+| Priya    | E-Commerce Website         | Global Soft       |
+| Sneha    | Payroll System             | NextGen Solutions |
+| Kiran    | Inventory Management       | Smart Systems     |
+| Ravi     | AI Chatbot                 | Tech Innovators   |
+| Pooja    | CRM Application            | Future Corp       |
++----------+----------------------------+-------------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name, d.dept_name, p.project_name, c.client_name
+    -> FROM employee e
+    -> INNER JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> INNER JOIN project p
+    -> ON e.emp_id = p.emp_id
+    -> INNER JOIN client c
+    -> ON p.project_id = c.project_id;
++----------+-----------+----------------------------+-------------------+
+| emp_name | dept_name | project_name               | client_name       |
++----------+-----------+----------------------------+-------------------+
+| Rahul    | HR        | Hospital Management System | ABC Technologies  |
+| Priya    | IT        | E-Commerce Website         | Global Soft       |
+| Sneha    | Finance   | Payroll System             | NextGen Solutions |
+| Kiran    | Marketing | Inventory Management       | Smart Systems     |
+| Ravi     | IT        | AI Chatbot                 | Tech Innovators   |
+| Pooja    | Sales     | CRM Application            | Future Corp       |
++----------+-----------+----------------------------+-------------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT e.emp_name
+    -> FROM employee e
+    -> LEFT JOIN project p
+    -> ON e.emp_id = p.emp_id
+    -> WHERE p.project_id IS NULL;
++----------+
+| emp_name |
++----------+
+| Amit     |
+| Anjali   |
+| Arjun    |
++----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT p.project_name
+    -> FROM project p
+    -> LEFT JOIN employee e
+    -> ON p.emp_id = e.emp_id
+    -> WHERE e.emp_id IS NULL;
++--------------+
+| project_name |
++--------------+
+| School ERP   |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT c.client_name
+    -> FROM client c
+    -> LEFT JOIN project p
+    -> ON c.project_id = p.project_id
+    -> WHERE p.project_id IS NULL;
++---------------+
+| client_name   |
++---------------+
+| Digital World |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT d.dept_name,
+    -> COUNT(e.emp_id) AS total_employees
+    -> FROM departments d
+    -> LEFT JOIN employees e
+    -> ON d.dept_id = e.dept_id
+    -> GROUP BY d.dept_name
+    -> ORDER BY total_employees DESC;
+ERROR 1146 (42S02): Table 'mysql_joins_e.departments' doesn't exist
+mysql> SELECT d.dept_name,
+    -> COUNT(e.emp_id) AS total_employee
+    -> FROM department d
+    -> LEFT JOIN employee e
+    -> ON d.dept_id = e.dept_id
+    -> GROUP BY d.dept_name
+    -> ORDER BY total_employee DESC;
++-----------+----------------+
+| dept_name | total_employee |
++-----------+----------------+
+| IT        |              3 |
+| Finance   |              2 |
+| HR        |              1 |
+| Marketing |              1 |
+| Sales     |              1 |
++-----------+----------------+
+5 rows in set (0.02 sec)
+
+mysql> SELECT
+    -> e.emp_id,
+    -> e.emp_name,
+    -> d.dept_name,
+    -> p.project_name,
+    -> c.client_name,
+    -> e.salary,
+    -> d.location
+    -> FROM employees e
+    -> LEFT JOIN departments d
+    -> ON e.dept_id = d.dept_id
+    -> LEFT JOIN projects p
+    -> ON e.emp_id = p.emp_id
+    -> LEFT JOIN clients c
+    -> ON p.project_id = c.project_id
+    -> project;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'project' at line 16
+mysql> SELECT
+    -> e.emp_id,
+    -> e.emp_name,
+    -> d.dept_name,
+    -> p.project_name,
+    -> c.client_name,
+    -> e.salary,
+    -> d.location
+    -> FROM employees e
+    -> LEFT JOIN departments d
+    -> ON e.dept_id = d.dept_id
+    -> LEFT JOIN projects p
+    -> ON e.emp_id = p.emp_id
+    -> LEFT JOIN clients c
+    -> ON e.emp_id = p.emp_id;
+ERROR 1146 (42S02): Table 'mysql_joins_e.employees' doesn't exist
+mysql> SELECT
+    -> e.emp_id,
+    -> e.emp_name,
+    -> d.dept_name,
+    -> p.project_name,
+    -> c.client_name,
+    -> e.salary,
+    -> d.location
+    -> FROM employee e
+    -> LEFT JOIN department d
+    -> ON e.dept_id = d.dept_id
+    -> LEFT JOIN project p
+    -> ON e.emp_id = p.emp_id
+    -> LEFT JOIN client c
+    -> ON p.project_id = c.project_id
+    -> ;
++--------+----------+-----------+----------------------------+-------------------+----------+-----------+
+| emp_id | emp_name | dept_name | project_name               | client_name       | salary   | location  |
++--------+----------+-----------+----------------------------+-------------------+----------+-----------+
+|    101 | Rahul    | HR        | Hospital Management System | ABC Technologies  | 45000.00 | Hyderabad |
+|    102 | Priya    | IT        | E-Commerce Website         | Global Soft       | 60000.00 | Bangalore |
+|    103 | Amit     | IT        | NULL                       | NULL              | 55000.00 | Bangalore |
+|    104 | Sneha    | Finance   | Payroll System             | NextGen Solutions | 50000.00 | Chennai   |
+|    105 | Kiran    | Marketing | Inventory Management       | Smart Systems     | 70000.00 | Mumbai    |
+|    106 | Anjali   | NULL      | NULL                       | NULL              | 48000.00 | NULL      |
+|    107 | Ravi     | IT        | AI Chatbot                 | Tech Innovators   | 40000.00 | Bangalore |
+|    108 | Pooja    | Sales     | CRM Application            | Future Corp       | 65000.00 | Delhi     |
+|    109 | Arjun    | NULL      | NULL                       | NULL              | 52000.00 | NULL      |
+|    110 | Deepika  | Finance   | Banking Portal             | NULL              | 58000.00 | Chennai   |
++--------+----------+-----------+----------------------------+-------------------+----------+-----------+
+10 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+# Program 4: Extract first and last names using slicing
+full_name = "king"
+first_name = full_name[:4]
+last_name = full_name[4:8]
+print("First Name:", first_name)
+print("Last Name:", last_name)

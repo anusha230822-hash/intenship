@@ -1,0 +1,4 @@
+# Program 2: Print every character using indexing
+text = "Python"
+for i in range(len(text)):
+    print(i, text[i])

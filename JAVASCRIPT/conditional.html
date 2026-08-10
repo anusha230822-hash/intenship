@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Operators</title>
+</head>
+<body>
+     <h1>Conditional operators</h1>
+    <label for="x">Enter first number (x):</label>
+    <input type="number" id="x" name="x"><br><br>
+    <label for="y">Enter second number (y):</label>
+    <input type="number" id="y" name="y"><br><br>
+    <button onclick="calculate()">Calculate</button>
+    <script>
+        function calculate(){
+         const x = parseInt(document.getElementById('x').value);
+         const y = parseInt(document.getElementById('y').value);
+         let equal = (x == y);
+         let tripleEqual = (x === y); 
+         let lessThan = (x < y); 
+         let lessThanEqual = (x <= y);
+         let greaterThan = (x > y);
+         let greaterThanEqual = (x >= y);
+         alert(`x == y: ${equal}\n
+         x === y: ${tripleEqual}\n
+         x < y: ${lessThan}\n
+         x <= y: ${lessThanEqual}\n
+         x > y: ${greaterThan}\n
+         x >= y: ${greaterThanEqual}`);
+        }
+    </script>
+    
+</body>
+</html>

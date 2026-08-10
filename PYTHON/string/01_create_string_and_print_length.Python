@@ -1,0 +1,4 @@
+# Program 1: Create a string and print its length
+text = "Python"
+print("String:", text)
+print("Length:", len(text))

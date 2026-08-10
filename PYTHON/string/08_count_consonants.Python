@@ -1,0 +1,8 @@
+# Program 8: Count consonants
+text = input("Enter text: ").lower()
+vowels = "aeiou"
+count = 0
+for ch in text:
+    if ch.isalpha() and ch not in vowels:
+        count += 1
+print("Consonant Count:", count)

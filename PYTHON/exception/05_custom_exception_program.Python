@@ -1,0 +1,12 @@
+# Program 5: Custom Exception
+
+class InvalidAgeError(Exception):
+    pass
+
+try:
+    age = int(input("Enter age: "))
+    if age < 18:
+        raise InvalidAgeError("Age must be 18 or above.")
+    print("Registration successful.")
+except InvalidAgeError as error:
+    print("Registration failed:", error)

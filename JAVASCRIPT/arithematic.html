@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARITHEMATIC OPERATIONS</title>
+</head>
+<body>
+    <h1>ARITHEMATIC OPERATIONS</h1>
+    <label for="x">Enter first number (x):</label>
+    <input type="number" id="x" name="x"><br><br>
+    <label for="y">Enter second number (y):</label>
+    <input type="number" id="y" name="y"><br><br>
+    <button onclick="calculate()">Calculate</button>
+    <script>
+        function calculate(){
+         const x = parseInt(document.getElementById('x').value);
+        const y = parseInt(document.getElementById('y').value);
+        let Addition = x + y;
+        let Subtraction = x - y;
+        let Multiplication = x * y;
+        let Division = x / y;
+        let Modulus = x % y;
+        alert(`Addition: ${Addition}\n
+        Subtraction: ${Subtraction}\n
+        Multiplication: ${Multiplication}\n
+        Division: ${Division}\n
+        Modulus: ${Modulus}`);
+        }
+    </script>
+</body>
+</html>

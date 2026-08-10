@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DEVELOP A PROJECT BASED ON BMI CATEGORY</title>
+    //TO DEVELOP A PROJECT BASED ON BMI CATEGORY
+    1.BELOW 18.5 UNDERWEIGHT
+    2.18.5-24.9 NORMAL WEIGHT
+    3.25-29.9 OVERWEIGHT
+    4.30 AND ABOVE OBESE
+</head>
+<body>
+    <script>
+        
+            let weight = prompt("Enter your weight in kilograms:");
+            let height = prompt("Enter your height in meters:");
+            let bmi = weight / (height * height);
+            let category = "";
+
+            if (bmi < 18.5) {
+                category = "Underweight";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                category = "Normal weight";
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                category = "Overweight";
+            } else {
+                category = "Obese";
+            }
+
+            alert(`Your BMI is ${bmi.toFixed(2)} and you are categorized as ${category}.`);
+        
+    
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Korean Cosmetics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f9f7f6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px;
+      align-items: flex-start;
+    }
+
+    .text-section {
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+
+    .text-section h1 {
+      font-size: 48px;
+      color: #8b2e2e;
+      margin: 0 0 20px 0;
+    }
+
+    .text-section p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .image-section {
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .text-section, .image-section {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">secret</div>
+    <nav>
+      <a href="#">ABOUT US</a>
+      <a href="#">PRODUCTS</a>
+      <a href="#">CONTACTS</a>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <div class="text-section">
+      <h1>KOREAN</h1>
+      <p>Korean cosmetics are famous for their natural compositions all over the world. <br>STYLE</p>
+    </div>
+    <div class="image-section">
+      <img src="first pagr.png" alt="">
+    </div>
+  </div>
+
+</body>
+</html>

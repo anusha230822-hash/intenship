@@ -1,0 +1,1 @@
+Assignment 7: Explain slicing with step value.

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LARGEST AMONG 3 NUMBERS</title>
+</head>
+<body>
+    <script>
+        function findLargest() {
+            const num1 = parseFloat(prompt("Enter the first number:"));
+            const num2 = parseFloat(prompt("Enter the second number:"));
+            const num3 = parseFloat(prompt("Enter the third number:"));
+
+            let largest;
+
+            if (num1 >= num2 && num1 >= num3) {
+                largest = num1;
+            } else if (num2 >= num1 && num2 >= num3) {
+                largest = num2;
+            } else {
+                largest = num3;
+            }
+
+            alert("The largest number is: " + largest);
+        }
+        findLargest();
+    </script>
+</body>
+</html>

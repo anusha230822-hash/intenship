@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Price</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #c62828;
+            margin-bottom: 15px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #e53935;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c62828;
+        }
+
+        #result {
+            margin-top: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Movie Ticket Price</h2>
+        <input id="age" type="number" placeholder="Enter your age">
+        <button onclick="calculateTicketPrice()">Check Price</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateTicketPrice() {
+            const age = parseInt(document.getElementById("age").value);
+            const resultBox = document.getElementById("result");
+
+            if (isNaN(age) || age <= 0) {
+                resultBox.innerText = "Please enter a valid age.";
+                return;
+            }
+
+            let ticketPrice;
+
+            if (age < 12) {
+                ticketPrice = 100;
+            } else if (age <= 54) {
+                ticketPrice = 200;
+            } else if (age >= 60) {
+                ticketPrice = 150;
+            } else {
+                resultBox.innerText = "Invalid age entered.";
+                return;
+            }
+
+            resultBox.innerText = `Your movie ticket price is: Rs ${ticketPrice}`;
+        }
+    </script>
+</body>
+</html>

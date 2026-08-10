@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Eligibility App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f3e5f5, #faf5ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            width: 330px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #6a1b9a;
+            margin-bottom: 15px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #8e24aa;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #6a1b9a;
+        }
+
+        #result {
+            margin-top: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Scholarship Eligibility</h2>
+        <input id="marks" type="number" placeholder="Enter average marks">
+        <input id="income" type="number" placeholder="Enter family income">
+        <button onclick="checkScholarship()">Check Eligibility</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkScholarship() {
+            const marks = parseFloat(document.getElementById("marks").value);
+            const familyIncome = parseFloat(document.getElementById("income").value);
+            const resultBox = document.getElementById("result");
+
+            if (isNaN(marks) || isNaN(familyIncome)) {
+                resultBox.innerText = "Please enter valid values.";
+                return;
+            }
+
+            if (marks >= 75 && familyIncome < 300000) {
+                resultBox.innerText = "You are eligible for the scholarship.";
+            } else {
+                resultBox.innerText = "You are not eligible for the scholarship.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f8fbff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #1f4f7a;
+            margin-bottom: 15px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #result {
+            margin-top: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Internet Speed Checker</h2>
+        <input id="speed" type="number" placeholder="Enter speed in Mbps">
+        <button onclick="checkSpeed()">Check Speed</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkSpeed() {
+            const speed = parseFloat(document.getElementById("speed").value);
+            const resultBox = document.getElementById("result");
+
+            if (isNaN(speed) || speed <= 0) {
+                resultBox.innerText = "Please enter a valid positive speed.";
+                return;
+            }
+
+            let category = "";
+
+            if (speed < 10) {
+                category = "Very Slow";
+            } else if (speed < 30) {
+                category = "Slow";
+            } else if (speed < 100) {
+                category = "Good";
+            } else {
+                category = "Excellent";
+            }
+
+            resultBox.innerText = `Your internet speed is ${speed} Mbps. Category: ${category}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Withdrawal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            width: 320px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>ATM Withdrawal</h2>
+        <input id="balance" type="number" placeholder="Enter account balance">
+        <input id="withdraw" type="number" placeholder="Enter withdrawal amount">
+        <button onclick="atmWithdrawal()">Withdraw</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function atmWithdrawal() {
+            const accountBalance = parseFloat(document.getElementById("balance").value);
+            const withdrawalAmount = parseFloat(document.getElementById("withdraw").value);
+            const resultBox = document.getElementById("result");
+
+            if (isNaN(accountBalance) || isNaN(withdrawalAmount) || accountBalance <= 0 || withdrawalAmount <= 0) {
+                resultBox.innerText = "Please enter valid positive values.";
+                return;
+            }
+
+            if (withdrawalAmount <= accountBalance) {
+                const remainingBalance = accountBalance - withdrawalAmount;
+                resultBox.innerText = `Withdrawal successful. Your new balance is: ${remainingBalance}`;
+            } else {
+                resultBox.innerText = "Insufficient balance.";
+            }
+        }
+    </script>
+</body>
+</html>

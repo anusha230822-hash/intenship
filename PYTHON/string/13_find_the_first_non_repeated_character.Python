@@ -1,0 +1,6 @@
+# Program 13: Find the first non-repeated character
+text = "swiss"
+for ch in text:
+    if text.count(ch) == 1:
+        print("First Non-Repeated Character:", ch)
+        break

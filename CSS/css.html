@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Different CSS Squares</title>
+
+<style>
+body{
+    background:#f4f4f4;
+    font-family:Arial;
+}
+
+.container{
+    width:700px;
+    margin:40px auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.box{
+    width:120px;
+    height:120px;
+}
+
+/* Different Styles */
+.box1{
+    background:red;
+}
+
+.box2{
+    background:blue;
+    border-radius:20px;
+}
+
+.box3{
+    background:green;
+    border:6px solid black;
+}
+
+.box4{
+    background:orange;
+    border-radius:50%;
+}
+
+.box5{
+    background:linear-gradient(red,yellow);
+}
+
+.box6{
+    background:linear-gradient(blue,purple);
+}
+
+.box7{
+    background:repeating-linear-gradient(
+    45deg,
+    red,
+    red 10px,
+    yellow 10px,
+    yellow 20px);
+}
+
+.box8{
+    background:radial-gradient(circle,white,green);
+}
+
+.box9{
+    background:pink;
+    box-shadow:8px 8px 10px gray;
+}
+
+.box10{
+    background:cyan;
+    border:5px dashed blue;
+}
+
+.box11{
+    background:gold;
+    border:5px dotted red;
+}
+
+.box12{
+    background:purple;
+    transform:rotate(10deg);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3"></div>
+<div class="box box4"></div>
+<div class="box box5"></div>
+<div class="box box6"></div>
+<div class="box box7"></div>
+<div class="box box8"></div>
+<div class="box box9"></div>
+<div class="box box10"></div>
+<div class="box box11"></div>
+<div class="box box12"></div>
+</div>
+</body>
+</html>
