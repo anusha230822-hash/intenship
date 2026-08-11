@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Function Returning Another Function </title>
+</head>
+<body>
+   <script>
+    
+        function outer() {
+            console.log("I am outer function");
+            return function inner() {
+                console.log("I am inner function");
+            };
+        }
+
+        const innerFunction = outer();
+        innerFunction();
+   </script> 
+</body>
+</html>

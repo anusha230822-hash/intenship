@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Callback With Parameters </title>
+</head>
+<body>
+    <script>
+         function add(a, b)
+          {
+             return a + b;
+             }
+              function calculate(callback) 
+              { 
+                console.log(callback(71,338));
+             }
+          calculate(add); 
+    </script>
+</body>
+</html>

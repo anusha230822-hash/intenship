@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Callback</title>
+</head>
+<body>
+    <script>
+        function calculate(callback) 
+        {
+             console.log(callback(71, 77)); 
+            }
+         calculate(function(a, b)
+         {
+             return a + b; 
+            }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Spread vs Rest </title>
+</head>
+<body>
+    <script>
+        
+        function sum(...args) {
+            let total = 0;
+            for (let i = 0; i < args.length; i++) {
+                total += args[i];
+            }
+            return total;
+        }
+
+        console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+
+        const numbers = [1, 2, 3];
+        const newNumbers = [...numbers, 4, 5];
+        console.log(newNumbers); // Output: [1, 2, 3, 4, 5]
+    </script>
+</body>
+</html>
