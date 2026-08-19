@@ -1,2 +1,2 @@
 from file_io_assignment_runner import run
-run(3, 6)
+run(3, 3)
