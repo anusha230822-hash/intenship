@@ -6,10 +6,7 @@ class StudentManagement:
         self.database = DatabaseManager()
 
     def add_student(self, student_id, name, age, course, marks):
-        self.database.execute(
-            "INSERT INTO students (id, name, age, course, marks) VALUES (%s, %s, %s, %s, %s)",
-            (student_id, name, age, course, marks),
-        )
+        self.database.execute("INSERT INTO students VALUES (%s, %s, %s, %s, %s)", (student_id, name, age, course, marks))
         self.database.commit()
         print("Student added successfully.")
 
@@ -28,9 +25,3 @@ class StudentManagement:
 
     def close(self):
         self.database.close()
-
-
-if __name__ == "__main__":
-    manager = StudentManagement()
-    print(manager.list_students())
-    manager.close()

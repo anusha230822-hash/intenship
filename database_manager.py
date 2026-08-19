@@ -38,9 +38,3 @@ class DatabaseManager:
         self.cursor.close()
         self.connection.close()
         print("Database connection closed.")
-
-
-if __name__ == "__main__":
-    manager = DatabaseManager()
-    print("Database connection established successfully.")
-    manager.close()

@@ -6,23 +6,15 @@ class Employee:
         self.database = DatabaseManager()
 
     def create(self, employee_id, name, department, salary, joining_date):
-        self.database.execute(
-            "INSERT INTO employees (employee_id, name, department, salary, joining_date) VALUES (%s, %s, %s, %s, %s)",
-            (employee_id, name, department, salary, joining_date),
-        )
+        self.database.execute("INSERT INTO employees VALUES (%s, %s, %s, %s, %s)", (employee_id, name, department, salary, joining_date))
         self.database.commit()
         print("Employee inserted successfully.")
 
     def read(self):
-        return self.database.fetch_all(
-            "SELECT employee_id, name, department, salary, joining_date FROM employees"
-        )
+        return self.database.fetch_all("SELECT employee_id, name, department, salary, joining_date FROM employees")
 
     def update(self, employee_id, department, salary):
-        self.database.execute(
-            "UPDATE employees SET department = %s, salary = %s WHERE employee_id = %s",
-            (department, salary, employee_id),
-        )
+        self.database.execute("UPDATE employees SET department = %s, salary = %s WHERE employee_id = %s", (department, salary, employee_id))
         self.database.commit()
         print(f"Employee updated. Rows changed: {self.database.row_count}")
 
@@ -33,9 +25,3 @@ class Employee:
 
     def close(self):
         self.database.close()
-
-
-if __name__ == "__main__":
-    employee = Employee()
-    print(employee.read())
-    employee.close()
