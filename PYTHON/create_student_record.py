@@ -1,2 +1,2 @@
 from file_io_assignment_runner import run
-run(7, 5)
+run(7, 1)
