@@ -1,2 +1,2 @@
 from oop_relationships_runner import run
-run(2, 1)
+run(4, 2)
