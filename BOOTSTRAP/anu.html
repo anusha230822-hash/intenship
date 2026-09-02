@@ -1,0 +1,2540 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Indigapalli Anusha | Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        :root {
+            --primary: #6c63ff;
+            --secondary: #8b7cf6;
+            --dark: #17172b;
+            --text: #55556b;
+            --light: #f7f6ff;
+            --white: #ffffff;
+            --border: #e8e6f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: var(--white);
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .section-title h2 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-size: 23px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .navbar-brand span {
+            color: var(--primary);
+        }
+
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 85% 20%, #e8e5ff 0%, transparent 25%),
+                radial-gradient(circle at 10% 80%, #f0edff 0%, transparent 25%),
+                #ffffff;
+        }
+
+        .hero-small {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 10px 0;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content h3 {
+            color: #45455d;
+            font-weight: 500;
+            font-size: 25px;
+        }
+
+        .hero-content p {
+            max-width: 600px;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            background: var(--dark);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+
+        /* HERO CARD */
+
+        .hero-card {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(145deg, #eeeaff, #ffffff);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            box-shadow: 0 20px 50px rgba(108,99,255,0.15);
+        }
+
+        .hero-card-inner {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 75px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
+            background: var(--light);
+        }
+
+        .about-box {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .about-box h3 {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .about-box p {
+            line-height: 1.9;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-item i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skill-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(108,99,255,0.12);
+            border-color: var(--primary);
+        }
+
+        .skill-card i {
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .skill-card h5 {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        #services {
+            background: var(--light);
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            height: 100%;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(108,99,255,0.10);
+        }
+
+        .service-card i {
+            font-size: 45px;
+            color: var(--primary);
+            margin-bottom: 18px;
+        }
+
+        .service-card h4 {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .project-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-top {
+            height: 170px;
+            background: linear-gradient(135deg, #6c63ff, #a69dfc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+        }
+
+        .project-card .card-body {
+            padding: 25px;
+        }
+
+        .project-card h5 {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .project-btn {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        #education {
+            background: var(--light);
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-left: 5px solid var(--primary);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        }
+
+        .education-card h4 {
+            color: var(--dark);
+        }
+
+        .education-card span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            background: var(--dark);
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+        }
+
+        .contact-box h2 {
+            font-weight: 700;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+        }
+
+        .contact-item i {
+            color: #aaa3ff;
+            font-size: 22px;
+            margin-right: 10px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #aaa3ff;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #10101f;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer span {
+            color: #aaa3ff;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content h3 {
+                font-size: 20px;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-card {
+                width: 270px;
+                height: 270px;
+                margin-top: 50px;
+            }
+
+            .hero-card-inner {
+                width: 190px;
+                height: 190px;
+                font-size: 55px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            Anu<span>.</span>
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <div class="hero-content">
+
+                    <div class="hero-small">
+                        Hello, I'm
+                    </div>
+
+                    <h1>
+                        Indigapalli <span>Anusha</span>
+                    </h1>
+
+                    <h3>
+                        Frontend Web Developer
+                    </h3>
+
+                    <p>
+                        I'm a Diploma 3rd Year CSE student passionate about
+                        creating responsive websites, digital content and
+                        creative online solutions.
+                    </p>
+
+                    <a href="#projects" class="btn-main">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn-outline">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-5">
+
+                <div class="hero-card">
+
+                    <div class="hero-card-inner">
+                        IA
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>WHO I AM</span>
+
+            <h2>About Me</h2>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-lg-8 mx-auto">
+
+                <div class="about-box">
+
+                    <h3>Hi, I'm Anusha 👋</h3>
+
+                    <p class="mt-3">
+
+                        I am <strong>Indigapalli Anusha</strong>, a Diploma
+                        3rd Year Computer Science and Engineering student
+                        with an interest in web development, digital
+                        marketing and creative content.
+
+                    </p>
+
+                    <p>
+
+                        I enjoy creating clean, responsive and user-friendly
+                        websites using HTML, CSS, Bootstrap and JavaScript.
+                        Along with development, I am interested in content
+                        writing, data entry and digital marketing.
+
+                    </p>
+
+
+                    <div class="row mt-4">
+
+                        <div class="col-md-6">
+
+                            <div class="info-item">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                Diploma 3rd Year
+                            </div>
+
+                            <div class="info-item">
+                                <i class="bi bi-code-slash"></i>
+                                Computer Science & Engineering
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="info-item">
+                                <i class="bi bi-laptop"></i>
+                                Frontend Developer
+                            </div>
+
+                            <div class="info-item">
+                                <i class="bi bi-pencil-square"></i>
+                                Content Writer
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>WHAT I KNOW</span>
+
+            <h2>My Skills</h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-filetype-html"></i>
+
+                    <h5>HTML</h5>
+
+                    <p>Web Structure</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-filetype-css"></i>
+
+                    <h5>CSS</h5>
+
+                    <p>Web Styling</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-bootstrap"></i>
+
+                    <h5>Bootstrap</h5>
+
+                    <p>Responsive Design</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-filetype-js"></i>
+
+                    <h5>JavaScript</h5>
+
+                    <p>Web Interaction</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-pencil-square"></i>
+
+                    <h5>Content Writing</h5>
+
+                    <p>Creative Content</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-keyboard"></i>
+
+                    <h5>Data Entry</h5>
+
+                    <p>Data Management</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-megaphone"></i>
+
+                    <h5>Digital Marketing</h5>
+
+                    <p>Online Promotion</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-github"></i>
+
+                    <h5>GitHub</h5>
+
+                    <p>Project Management</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>WHAT I OFFER</span>
+
+            <h2>My Services</h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <i class="bi bi-code-square"></i>
+
+                    <h4>Web Development</h4>
+
+                    <p>
+                        Responsive and modern websites using
+                        HTML, CSS, Bootstrap and JavaScript.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <i class="bi bi-database"></i>
+
+                    <h4>Data Entry</h4>
+
+                    <p>
+                        Accurate data entry, formatting and
+                        basic data management services.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <i class="bi bi-pencil"></i>
+
+                    <h4>Content Writing</h4>
+
+                    <p>
+                        Simple and engaging content for
+                        websites and social media.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <h4>Digital Marketing</h4>
+
+                    <p>
+                        Social media promotion and basic
+                        digital marketing support.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>MY WORK</span>
+
+            <h2>Projects</h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card project-card">
+
+                    <div class="project-top">
+
+                        <i class="bi bi-shop"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <h5>Restaurant Website</h5>
+
+                        <p>
+                            A responsive restaurant website with
+                            menu, offers, gallery and contact sections.
+                        </p>
+
+                        <p>
+                            <small>
+                                HTML • CSS • Bootstrap • JavaScript
+                            </small>
+                        </p>
+
+                        <a href="#" class="project-btn">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card project-card">
+
+                    <div class="project-top">
+
+                        <i class="bi bi-mortarboard"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <h5>Institute Website</h5>
+
+                        <p>
+                            A responsive coaching institute website
+                            with courses, admission and contact sections.
+                        </p>
+
+                        <p>
+                            <small>
+                                HTML • CSS • Bootstrap • JavaScript
+                            </small>
+                        </p>
+
+                        <a href="#" class="project-btn">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card project-card">
+
+                    <div class="project-top">
+
+                        <i class="bi bi-person-badge"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <h5>Personal Portfolio</h5>
+
+                        <p>
+                            A modern responsive portfolio website
+                            to showcase skills, services and projects.
+                        </p>
+
+                        <p>
+                            <small>
+                                HTML • CSS • Bootstrap • JavaScript
+                            </small>
+                        </p>
+
+                        <a href="#" class="project-btn">
+                            Current Website →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>MY JOURNEY</span>
+
+            <h2>Education</h2>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-lg-8 mx-auto">
+
+                <div class="education-card">
+
+                    <span>Current</span>
+
+                    <h4 class="mt-2">
+                        Diploma in Computer Engineering
+                    </h4>
+
+                    <p>
+                        3rd Year | Computer Science & Engineering
+                    </p>
+
+                    <p>
+                        Currently developing skills in web development,
+                        programming and digital technologies.
+                    </p>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <span>Completed</span>
+
+                    <h4 class="mt-2">
+                        Secondary School Education
+                    </h4>
+
+                    <p>
+                        Built a strong foundation for higher studies
+                        and technology learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h2>
+                        Let's Work Together ✨
+                    </h2>
+
+                    <p class="mt-3">
+                        Have a project or freelance opportunity?
+                        Feel free to contact me.
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <a href="mailto:yourmail@gmail.com">
+                            yourmail@gmail.com
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-telephone"></i>
+
+                        <a href="tel:+910000000000">
+                            +91 XXXXX XXXXX
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-github"></i>
+
+                        <a href="#" target="_blank">
+                            GitHub Profile
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-linkedin"></i>
+
+                        <a href="#" target="_blank">
+                            LinkedIn Profile
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p class="mb-0">
+        © 2026 <span>Indigapalli Anusha</span>.
+        Designed & Built with 💜
+    </p>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+    // Simple welcome message
+    console.log("Welcome to Anusha's Portfolio!");
+
+    // Close mobile navbar after clicking a link
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    navLinks.forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            if (navbarCollapse.classList.contains("show")) {
+
+                new bootstrap.Collapse(navbarCollapse).hide();
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Indigapalli Anusha | Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        :root {
+            --primary: #6c63ff;
+            --secondary: #8b7cf6;
+            --dark: #17172b;
+            --text: #55556b;
+            --light: #f7f6ff;
+            --white: #ffffff;
+            --border: #e8e6f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: var(--white);
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .section-title h2 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-size: 23px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .navbar-brand span {
+            color: var(--primary);
+        }
+
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 85% 20%, #e8e5ff 0%, transparent 25%),
+                radial-gradient(circle at 10% 80%, #f0edff 0%, transparent 25%),
+                #ffffff;
+        }
+
+        .hero-small {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 10px 0;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content h3 {
+            color: #45455d;
+            font-weight: 500;
+            font-size: 25px;
+        }
+
+        .hero-content p {
+            max-width: 600px;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            background: var(--dark);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+
+        /* HERO CARD */
+
+        .hero-card {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(145deg, #eeeaff, #ffffff);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            box-shadow: 0 20px 50px rgba(108,99,255,0.15);
+        }
+
+        .hero-card-inner {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 75px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
+            background: var(--light);
+        }
+
+        .about-box {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .about-box h3 {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .about-box p {
+            line-height: 1.9;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-item i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skill-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(108,99,255,0.12);
+            border-color: var(--primary);
+        }
+
+        .skill-card i {
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .skill-card h5 {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        #services {
+            background: var(--light);
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            height: 100%;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(108,99,255,0.10);
+        }
+
+        .service-card i {
+            font-size: 45px;
+            color: var(--primary);
+            margin-bottom: 18px;
+        }
+
+        .service-card h4 {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .project-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-top {
+            height: 170px;
+            background: linear-gradient(135deg, #6c63ff, #a69dfc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+        }
+
+        .project-card .card-body {
+            padding: 25px;
+        }
+
+        .project-card h5 {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .project-btn {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        #education {
+            background: var(--light);
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-left: 5px solid var(--primary);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        }
+
+        .education-card h4 {
+            color: var(--dark);
+        }
+
+        .education-card span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            background: var(--dark);
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+        }
+
+        .contact-box h2 {
+            font-weight: 700;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+        }
+
+        .contact-item i {
+            color: #aaa3ff;
+            font-size: 22px;
+            margin-right: 10px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #aaa3ff;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #10101f;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer span {
+            color: #aaa3ff;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content h3 {
+                font-size: 20px;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-card {
+                width: 270px;
+                height: 270px;
+                margin-top: 50px;
+            }
+
+            .hero-card-inner {
+                width: 190px;
+                height: 190px;
+                font-size: 55px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            Anu<span>.</span>
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <div class="hero-content">
+
+                    <div class="hero-small">
+                        Hello, I'm
+                    </div>
+
+                    <h1>
+                        Indigapalli <span>Anusha</span>
+                    </h1>
+
+                    <h3>
+                        Frontend Web Developer
+                    </h3>
+
+                    <p>
+                        I'm a Diploma 3rd Year CSE student passionate about
+                        creating responsive websites, digital content and
+                        creative online solutions.
+                    </p>
+
+                    <a href="#projects" class="btn-main">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn-outline">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-5">
+
+                <div class="hero-card">
+
+                    <div class="hero-card-inner">
+                        IA
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>WHO I AM</span>
+
+            <h2>About Me</h2>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-lg-8 mx-auto">
+
+                <div class="about-box">
+
+                    <h3>Hi, I'm Anusha 👋</h3>
+
+                    <p class="mt-3">
+
+                        I am <strong>Indigapalli Anusha</strong>, a Diploma
+                        3rd Year Computer Science and Engineering student
+                        with an interest in web development, digital
+                        marketing and creative content.
+
+                    </p>
+
+                    <p>
+
+                        I enjoy creating clean, responsive and user-friendly
+                        websites using HTML, CSS, Bootstrap and JavaScript.
+                        Along with development, I am interested in content
+                        writing, data entry and digital marketing.
+
+                    </p>
+
+
+                    <div class="row mt-4">
+
+                        <div class="col-md-6">
+
+                            <div class="info-item">
+                                <i class="bi bi-mortarboard-fill"></i>
+                                Diploma 3rd Year
+                            </div>
+
+                            <div class="info-item">
+                                <i class="bi bi-code-slash"></i>
+                                Computer Science & Engineering
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="info-item">
+                                <i class="bi bi-laptop"></i>
+                                Frontend Developer
+                            </div>
+
+                            <div class="info-item">
+                                <i class="bi bi-pencil-square"></i>
+                                Content Writer
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>WHAT I KNOW</span>
+
+            <h2>My Skills</h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-filetype-html"></i>
+
+                    <h5>HTML</h5>
+
+                    <p>Web Structure</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-filetype-css"></i>
+
+                    <h5>CSS</h5>
+
+                    <p>Web Styling</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-bootstrap"></i>
+
+                    <h5>Bootstrap</h5>
+
+                    <p>Responsive Design</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-filetype-js"></i>
+
+                    <h5>JavaScript</h5>
+
+                    <p>Web Interaction</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-pencil-square"></i>
+
+                    <h5>Content Writing</h5>
+
+                    <p>Creative Content</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-keyboard"></i>
+
+                    <h5>Data Entry</h5>
+
+                    <p>Data Management</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-megaphone"></i>
+
+                    <h5>Digital Marketing</h5>
+
+                    <p>Online Promotion</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="skill-card">
+
+                    <i class="bi bi-github"></i>
+
+                    <h5>GitHub</h5>
+
+                    <p>Project Management</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>WHAT I OFFER</span>
+
+            <h2>My Services</h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <i class="bi bi-code-square"></i>
+
+                    <h4>Web Development</h4>
+
+                    <p>
+                        Responsive and modern websites using
+                        HTML, CSS, Bootstrap and JavaScript.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <i class="bi bi-database"></i>
+
+                    <h4>Data Entry</h4>
+
+                    <p>
+                        Accurate data entry, formatting and
+                        basic data management services.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <i class="bi bi-pencil"></i>
+
+                    <h4>Content Writing</h4>
+
+                    <p>
+                        Simple and engaging content for
+                        websites and social media.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="service-card">
+
+                    <i class="bi bi-bar-chart"></i>
+
+                    <h4>Digital Marketing</h4>
+
+                    <p>
+                        Social media promotion and basic
+                        digital marketing support.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>MY WORK</span>
+
+            <h2>Projects</h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card project-card">
+
+                    <div class="project-top">
+
+                        <i class="bi bi-shop"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <h5>Restaurant Website</h5>
+
+                        <p>
+                            A responsive restaurant website with
+                            menu, offers, gallery and contact sections.
+                        </p>
+
+                        <p>
+                            <small>
+                                HTML • CSS • Bootstrap • JavaScript
+                            </small>
+                        </p>
+
+                        <a href="#" class="project-btn">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card project-card">
+
+                    <div class="project-top">
+
+                        <i class="bi bi-mortarboard"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <h5>Institute Website</h5>
+
+                        <p>
+                            A responsive coaching institute website
+                            with courses, admission and contact sections.
+                        </p>
+
+                        <p>
+                            <small>
+                                HTML • CSS • Bootstrap • JavaScript
+                            </small>
+                        </p>
+
+                        <a href="#" class="project-btn">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card project-card">
+
+                    <div class="project-top">
+
+                        <i class="bi bi-person-badge"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <h5>Personal Portfolio</h5>
+
+                        <p>
+                            A modern responsive portfolio website
+                            to showcase skills, services and projects.
+                        </p>
+
+                        <p>
+                            <small>
+                                HTML • CSS • Bootstrap • JavaScript
+                            </small>
+                        </p>
+
+                        <a href="#" class="project-btn">
+                            Current Website →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>MY JOURNEY</span>
+
+            <h2>Education</h2>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-lg-8 mx-auto">
+
+                <div class="education-card">
+
+                    <span>Current</span>
+
+                    <h4 class="mt-2">
+                        Diploma in Computer Engineering
+                    </h4>
+
+                    <p>
+                        3rd Year | Computer Science & Engineering
+                    </p>
+
+                    <p>
+                        Currently developing skills in web development,
+                        programming and digital technologies.
+                    </p>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <span>Completed</span>
+
+                    <h4 class="mt-2">
+                        Secondary School Education
+                    </h4>
+
+                    <p>
+                        Built a strong foundation for higher studies
+                        and technology learning.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h2>
+                        Let's Work Together ✨
+                    </h2>
+
+                    <p class="mt-3">
+                        Have a project or freelance opportunity?
+                        Feel free to contact me.
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <a href="mailto:yourmail@gmail.com">
+                            yourmail@gmail.com
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-telephone"></i>
+
+                        <a href="tel:+910000000000">
+                            +91 XXXXX XXXXX
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-github"></i>
+
+                        <a href="#" target="_blank">
+                            GitHub Profile
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-linkedin"></i>
+
+                        <a href="#" target="_blank">
+                            LinkedIn Profile
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p class="mb-0">
+        © 2026 <span>Indigapalli Anusha</span>.
+        Designed & Built with 💜
+    </p>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+    // Simple welcome message
+    console.log("Welcome to Anusha's Portfolio!");
+
+    // Close mobile navbar after clicking a link
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    navLinks.forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            if (navbarCollapse.classList.contains("show")) {
+
+                new bootstrap.Collapse(navbarCollapse).hide();
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
+```

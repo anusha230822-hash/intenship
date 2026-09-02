@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #eaf6f8 0%, #dcf0ee 100%);
+  }
+
+  .login-wrapper {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .login-card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #dcf0ee;
+    box-shadow: 0 10px 30px rgba(0,150,150,0.12);
+    padding: 34px 28px;
+  }
+
+  .login-title {
+    text-align: center;
+    font-weight: 700;
+    color: #0e5064;
+    margin-bottom: 4px;
+    font-size: 22px;
+  }
+
+  .login-subtitle {
+    text-align: center;
+    color: #7fa8b3;
+    font-size: 13.5px;
+    margin-bottom: 26px;
+  }
+
+  .form-label {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: #245b6b;
+  }
+
+  .form-control {
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 1px solid #cdeaea;
+    background: #f7fdfd;
+  }
+
+  .form-control:focus {
+    border-color: #00acc1;
+    box-shadow: 0 0 0 0.15rem rgba(0,172,193,0.18);
+    background: #fff;
+  }
+
+  .form-check-label {
+    font-size: 13px;
+    color: #666;
+  }
+
+  .forgot-link {
+    font-size: 13px;
+    color: #00acc1;
+    text-decoration: none;
+  }
+  .forgot-link:hover { text-decoration: underline; }
+
+  .btn-login {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 0;
+    margin-top: 14px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    background: linear-gradient(135deg, #00acc1, #0088a3);
+    box-shadow: 0 8px 18px rgba(0,172,193,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-login:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0,172,193,0.45);
+    color: #fff;
+  }
+
+  .signup-text {
+    text-align: center;
+    font-size: 13px;
+    color: #7fa8b3;
+    margin-top: 20px;
+  }
+  .signup-text a {
+    color: #00acc1;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .invalid-feedback { font-size: 12px; }
+
+  @media (max-width: 400px) {
+    .login-card { padding: 26px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="login-wrapper">
+  <div class="login-card">
+    <h3 class="login-title">Student Login</h3>
+    <p class="login-subtitle">Please enter your details to sign in</p>
+
+    <form id="loginForm" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label class="form-label">Student ID</label>
+        <input type="text" class="form-control" id="studentId" placeholder="e.g. STU2026001" required>
+        <div class="invalid-feedback">Please enter your Student ID.</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" id="loginEmail" placeholder="you@example.com" required>
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required minlength="6">
+        <div class="invalid-feedback">Password must be at least 6 characters.</div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-2 mt-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Remember me</label>
+        </div>
+        <a href="#" class="forgot-link">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-login">Login</button>
+    </form>
+
+    <p class="signup-text">Don't have an account? <a href="#">Sign up</a></p>
+  </div>
+</div>
+
+<script>
+  const loginForm = document.getElementById('loginForm');
+
+  loginForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (!loginForm.checkValidity()) {
+      loginForm.classList.add('was-validated');
+      return;
+    }
+
+    loginForm.classList.add('was-validated');
+
+    const studentId = document.getElementById('studentId').value;
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    alert(
+      'Successful Login\n\n' +
+      'Student ID: ' + studentId + '\n' +
+      'Email: ' + email + '\n' +
+      'Password: ' + password
+    );
+
+    loginForm.reset();
+    loginForm.classList.remove('was-validated');
+  });
+</script>
+</body>
+</html>
