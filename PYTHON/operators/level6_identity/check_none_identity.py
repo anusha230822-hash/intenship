@@ -1,2 +1,3 @@
-from operators_assignment_runner import run
-run(6, 7)
+value = None
+print("Value:", value)
+print("Value is None:", value is None)

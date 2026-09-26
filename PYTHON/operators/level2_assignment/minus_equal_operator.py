@@ -1,2 +1,5 @@
-from operators_assignment_runner import run
-run(2, 3)
+stock = 20
+sold_items = 3
+stock -= sold_items
+print("Sold items:", sold_items)
+print("Remaining stock:", stock)

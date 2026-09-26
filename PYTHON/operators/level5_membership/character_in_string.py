@@ -1,2 +1,5 @@
-from operators_assignment_runner import run
-run(5, 3)
+word = "Python"
+character = "p"
+found = character in word.lower()
+print("Word:", word)
+print(character, "is in the word:", found)

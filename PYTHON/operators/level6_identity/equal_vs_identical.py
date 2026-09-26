@@ -1,2 +1,4 @@
-from operators_assignment_runner import run
-run(6, 4)
+first_list = [1, 2]
+second_list = [1, 2]
+print("Equal using ==:", first_list == second_list)
+print("Identical using is:", first_list is second_list)

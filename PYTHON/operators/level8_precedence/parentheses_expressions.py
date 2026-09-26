@@ -1,2 +1,4 @@
-from operators_assignment_runner import run
-run(8, 2)
+without_parentheses = 2 + 3 * 4
+with_parentheses = (2 + 3) * 4
+print("Without parentheses:", without_parentheses)
+print("With parentheses:", with_parentheses)

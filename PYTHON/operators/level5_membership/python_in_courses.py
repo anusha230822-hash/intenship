@@ -1,2 +1,4 @@
-from operators_assignment_runner import run
-run(5, 6)
+courses = ["Python", "SQL", "HTML"]
+course_name = "Python"
+print("Courses:", courses)
+print(course_name, "is available:", course_name in courses)

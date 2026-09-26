@@ -1,2 +1,4 @@
-from operators_assignment_runner import run
-run(7, 6)
+number, shift_count = 20, 2
+result = number >> shift_count
+print("Number:", number)
+print("Right shift result:", result)

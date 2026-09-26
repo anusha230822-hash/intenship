@@ -1,2 +1,4 @@
-from operators_assignment_runner import run
-run(7, 4)
+number = 20
+result = ~number
+print("Number:", number)
+print("Bitwise NOT:", result)

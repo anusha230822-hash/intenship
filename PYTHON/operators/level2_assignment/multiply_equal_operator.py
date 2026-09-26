@@ -1,2 +1,6 @@
-from operators_assignment_runner import run
-run(2, 4)
+salary = 7000
+months = 5
+total_salary = salary
+total_salary *= months
+print("Monthly salary:", salary)
+print("Salary for", months, "months:", total_salary)

@@ -1,2 +1,4 @@
-from operators_assignment_runner import run
-run(1, 7)
+base = 20
+exponent = 2
+result = base ** exponent
+print(f"{base} ** {exponent} = {result}")

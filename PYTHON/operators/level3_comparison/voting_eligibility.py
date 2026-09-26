@@ -1,2 +1,6 @@
-from operators_assignment_runner import run
-run(3, 8)
+age = 21
+minimum_voting_age = 18
+eligible = age >= minimum_voting_age
+print("Age:", age)
+print("Minimum voting age:", minimum_voting_age)
+print("Eligible to vote:", eligible)

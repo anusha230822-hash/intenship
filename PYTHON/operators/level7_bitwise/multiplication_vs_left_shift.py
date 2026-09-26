@@ -1,2 +1,5 @@
-from operators_assignment_runner import run
-run(7, 7)
+number = 5
+multiplied = number * 2
+shifted = number << 1
+print("Multiplication result:", multiplied)
+print("Left shift result:", shifted)

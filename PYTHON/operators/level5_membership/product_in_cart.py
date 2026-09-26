@@ -1,2 +1,4 @@
-from operators_assignment_runner import run
-run(5, 10)
+cart = ["Laptop", "Mouse", "Keyboard"]
+product = "Laptop"
+print("Shopping cart:", cart)
+print(product, "is in the cart:", product in cart)

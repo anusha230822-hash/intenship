@@ -1,2 +1,5 @@
-from operators_assignment_runner import run
-run(1, 10)
+principal = 10000
+rate = 5
+time = 2
+interest = principal * rate * time / 100
+print(f"Simple interest = {interest}")

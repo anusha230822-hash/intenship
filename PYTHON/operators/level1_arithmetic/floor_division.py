@@ -1,2 +1,4 @@
-from operators_assignment_runner import run
-run(1, 6)
+dividend = 20
+divisor = 6
+quotient = dividend // divisor
+print(f"{dividend} // {divisor} = {quotient}")

@@ -1,2 +1,6 @@
-from operators_assignment_runner import run
-run(6, 10)
+class Student:
+	pass
+
+first_student = Student()
+second_student = first_student
+print("Objects are identical:", first_student is second_student)

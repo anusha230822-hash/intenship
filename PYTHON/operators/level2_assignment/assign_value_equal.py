@@ -1,2 +1,7 @@
-from operators_assignment_runner import run
-run(2, 1)
+student_name = "Anusha"
+student_age = 21
+student_course = "Python"
+print("Student details")
+print("Name:", student_name)
+print("Age:", student_age)
+print("Course:", student_course)

@@ -1,2 +1,5 @@
-from operators_assignment_runner import run
-run(9, 9)
+registered_users = ["anusha", "rahul", "meena"]
+username = "anusha"
+is_registered = username in registered_users
+print("Registered users:", registered_users)
+print("User is registered:", is_registered)

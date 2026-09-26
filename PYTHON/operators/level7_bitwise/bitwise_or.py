@@ -1,2 +1,4 @@
-from operators_assignment_runner import run
-run(7, 2)
+first_number, second_number = 20, 6
+result = first_number | second_number
+print("Numbers:", first_number, second_number)
+print("Bitwise OR:", result)

@@ -1,2 +1,3 @@
-from operators_assignment_runner import run
-run(8, 6)
+result = 20 + 6 * 2 - 8 / 2
+print("Expression: 20 + 6 * 2 - 8 / 2")
+print("Result:", result)
