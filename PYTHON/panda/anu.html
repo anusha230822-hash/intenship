@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SatelliteAI - Image Classification</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8fc;
+            color: #172033;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: #07182f;
+            padding: 15px 0;
+        }
+
+
+        .navbar-brand {
+            color: white !important;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+
+        .navbar-brand span {
+            color: #35a7ff;
+        }
+
+
+        .nav-link {
+            color: #dce8f7 !important;
+            margin-left: 20px;
+        }
+
+
+        .nav-link:hover {
+            color: #35a7ff !important;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 650px;
+
+            padding: 150px 0 80px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    #14558d,
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #041126,
+                    #0a294b
+                );
+
+            color: white;
+        }
+
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            border-radius: 30px;
+
+            background: #ffffff12;
+
+            border: 1px solid #ffffff25;
+
+            color: #71c2ff;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero h1 {
+            font-size: 58px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+
+        .hero h1 span {
+            color: #35a7ff;
+        }
+
+
+        .hero p {
+            color: #b9c9dc;
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 25px 0;
+            max-width: 650px;
+        }
+
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+
+        .btn-main {
+            background: #1689ff;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+        }
+
+
+        .btn-main:hover {
+            background: #066bd7;
+            color: white;
+        }
+
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            margin-top: 45px;
+        }
+
+
+        .hero-stats strong {
+            display: block;
+            font-size: 25px;
+            color: #35a7ff;
+        }
+
+
+        .hero-stats small {
+            color: #aebdd0;
+        }
+
+
+        /* ================= EARTH ================= */
+
+        .earth-container {
+            height: 420px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+        }
+
+
+        .earth {
+            width: 230px;
+            height: 230px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1689ff,
+                    #07386c
+                );
+
+            box-shadow:
+                0 0 70px #1689ff66;
+        }
+
+
+        .earth i {
+            font-size: 150px;
+            color: #72c5ff;
+        }
+
+
+        .orbit {
+            position: absolute;
+
+            border: 1px solid #48aeff55;
+
+            border-radius: 50%;
+        }
+
+
+        .orbit1 {
+            width: 370px;
+            height: 160px;
+            transform: rotate(-20deg);
+        }
+
+
+        .orbit2 {
+            width: 420px;
+            height: 230px;
+            transform: rotate(30deg);
+        }
+
+
+        .floating {
+            position: absolute;
+
+            padding: 12px 18px;
+
+            background: #ffffff12;
+
+            border: 1px solid #ffffff25;
+
+            backdrop-filter: blur(10px);
+
+            border-radius: 10px;
+
+            color: white;
+        }
+
+
+        .floating i {
+            color: #55b9ff;
+        }
+
+
+        .float1 {
+            left: 0;
+            top: 50px;
+        }
+
+
+        .float2 {
+            right: 0;
+            bottom: 70px;
+        }
+
+
+        .float3 {
+            right: 10px;
+            top: 80px;
+        }
+
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+
+        .section-title span {
+            color: #1689ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+
+        .section-title h2 {
+            font-size: 38px;
+            font-weight: 750;
+            margin-top: 10px;
+        }
+
+
+        .section-title p {
+            color: #6d7786;
+            max-width: 650px;
+            margin: 15px auto;
+        }
+
+
+        /* ================= UPLOAD ================= */
+
+        #upload {
+            background: white;
+        }
+
+
+        .upload-box {
+            max-width: 750px;
+
+            margin: auto;
+
+            border: 2px dashed #a9c6e2;
+
+            border-radius: 20px;
+
+            padding: 60px 30px;
+
+            text-align: center;
+
+            background: #f7fbff;
+
+            transition: 0.3s;
+        }
+
+
+        .upload-box:hover,
+        .upload-box.drag {
+            border-color: #1689ff;
+
+            background: #edf7ff;
+        }
+
+
+        .upload-icon {
+            width: 80px;
+            height: 80px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #e5f3ff;
+
+            color: #1689ff;
+
+            font-size: 35px;
+        }
+
+
+        .upload-box h3 {
+            margin-top: 25px;
+        }
+
+
+        .upload-box p {
+            color: #778394;
+        }
+
+
+        #imageInput {
+            display: none;
+        }
+
+
+        .choose-btn {
+            display: inline-block;
+
+            background: #1689ff;
+
+            color: white;
+
+            padding: 13px 25px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            margin: 10px;
+        }
+
+
+        .preview {
+            display: none;
+
+            max-width: 750px;
+
+            margin: 25px auto;
+
+            background: #eef6ff;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+
+        .preview img {
+            width: 120px;
+            height: 90px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+        }
+
+
+        .classify-button {
+            display: none;
+
+            width: 100%;
+
+            max-width: 750px;
+
+            margin: auto;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #07182f;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+        }
+
+
+        .classify-button:hover {
+            background: #1689ff;
+        }
+
+
+        /* ================= LOADING ================= */
+
+        .loading {
+            display: none;
+
+            text-align: center;
+
+            margin: 30px;
+        }
+
+
+        .spinner {
+            width: 45px;
+            height: 45px;
+
+            border: 5px solid #dbeeff;
+
+            border-top-color: #1689ff;
+
+            border-radius: 50%;
+
+            animation: spin 1s linear infinite;
+
+            margin: auto;
+        }
+
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        /* ================= RESULT ================= */
+
+        #result {
+            display: none;
+
+            background: #f5f8fc;
+        }
+
+
+        .result-card {
+            max-width: 1000px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px #17304b15;
+        }
+
+
+        .result-image {
+            width: 100%;
+
+            height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+        }
+
+
+        .result-box {
+            background: #f5f8fc;
+
+            padding: 22px;
+
+            border-radius: 12px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .result-box h6 {
+            color: #778394;
+
+            text-transform: uppercase;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .prediction {
+            color: #1689ff;
+
+            font-size: 35px;
+
+            font-weight: bold;
+        }
+
+
+        .confidence {
+            font-size: 28px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= ONTOLOGY ================= */
+
+        .ontology {
+            background:
+                linear-gradient(
+                    135deg,
+                    #06152c,
+                    #0a2c50
+                );
+
+            color: white;
+        }
+
+
+        .ontology .section-title p {
+            color: #b6c8dc;
+        }
+
+
+        .ontology-root,
+        .ontology-parent {
+            width: fit-content;
+
+            margin: auto;
+
+            padding: 15px 25px;
+
+            background: #1689ff;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+        }
+
+
+        .ontology-line {
+            width: 2px;
+
+            height: 40px;
+
+            background: #4db4ff;
+
+            margin: auto;
+        }
+
+
+        .ontology-parent {
+            background: #143c65;
+        }
+
+
+        .ontology-items {
+            display: grid;
+
+            grid-template-columns:
+                repeat(6, 1fr);
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+
+        .ontology-item {
+            text-align: center;
+
+            padding: 20px 10px;
+
+            border-radius: 12px;
+
+            background: #ffffff0c;
+
+            border: 1px solid #ffffff1b;
+        }
+
+
+        .ontology-item i {
+            display: block;
+
+            color: #55b9ff;
+
+            font-size: 27px;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* ================= PROCESS ================= */
+
+        .process-card {
+            background: white;
+
+            border: 1px solid #e2eaf3;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            height: 100%;
+
+            transition: 0.3s;
+        }
+
+
+        .process-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: 0 15px 30px #102a4315;
+        }
+
+
+        .process-icon {
+            width: 60px;
+            height: 60px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #e5f3ff;
+
+            color: #1689ff;
+
+            border-radius: 14px;
+
+            font-size: 27px;
+        }
+
+
+        .process-card p {
+            color: #778394;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= DASHBOARD ================= */
+
+        .dashboard-card {
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            box-shadow: 0 5px 20px #102a4310;
+        }
+
+
+        .number {
+            font-size: 35px;
+
+            font-weight: bold;
+
+            color: #1689ff;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: #f5f8fc;
+        }
+
+
+        .cta-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #07182f,
+                    #1269ad
+                );
+
+            padding: 50px;
+
+            border-radius: 20px;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        .cta-box p {
+            color: #c3d5e8;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #061329;
+
+            color: white;
+
+            padding: 45px 0;
+        }
+
+
+        footer p {
+            color: #9eafc4;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 991px) {
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+
+            .earth-container {
+                margin-top: 50px;
+            }
+
+
+            .ontology-items {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media(max-width: 768px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+
+            .hero-stats {
+                gap: 25px;
+            }
+
+
+            .ontology-items {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .cta-box {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+        }
+
+
+        @media(max-width: 576px) {
+
+            .hero {
+                padding-top: 120px;
+            }
+
+
+            .hero h1 {
+                font-size: 33px;
+            }
+
+
+            .earth {
+                width: 180px;
+                height: 180px;
+            }
+
+
+            .earth i {
+                font-size: 110px;
+            }
+
+
+            .orbit1 {
+                width: 290px;
+            }
+
+
+            .orbit2 {
+                width: 320px;
+            }
+
+
+            .floating {
+                font-size: 11px;
+            }
+
+
+            .float1 {
+                left: 0;
+            }
+
+
+            .float2 {
+                right: 0;
+            }
+
+
+            .ontology-items {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- NAVBAR -->
+<!-- ================================================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+    <div class="container">
+
+        <a
+            class="navbar-brand"
+            href="#home">
+
+            🛰 Satellite<span>AI</span>
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu">
+
+            <i class="bi bi-list text-white"></i>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#home">
+                        Home
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#upload">
+                        Classify
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#process">
+                        Process
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#ontology">
+                        Ontology
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#dashboard">
+                        Dashboard
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================================================= -->
+<!-- HERO -->
+<!-- ================================================= -->
+
+<section
+    class="hero"
+    id="home">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+
+            <div class="col-lg-7">
+
+
+                <div class="hero-badge">
+
+                    ✨ AI Powered Satellite Analysis
+
+                </div>
+
+
+                <h1>
+
+                    Understand Earth's
+                    <span>Surface</span>
+                    Through AI
+
+                </h1>
+
+
+                <p>
+
+                    Upload a satellite image and
+                    classify land areas using
+                    Image Processing, Machine Learning
+                    and Ontology.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#upload"
+                        class="btn btn-main">
+
+                        <i class="bi bi-cloud-upload"></i>
+
+                        Upload Image
+
+                    </a>
+
+
+                    <a
+                        href="#process"
+                        class="btn btn-outline-light">
+
+                        How It Works
+
+                    </a>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div>
+
+                        <strong>AI</strong>
+
+                        <small>
+                            Classification
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>ML</strong>
+
+                        <small>
+                            Prediction
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>OWL</strong>
+
+                        <small>
+                            Ontology
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="col-lg-5">
+
+                <div class="earth-container">
+
+                    <div class="orbit orbit1"></div>
+
+                    <div class="orbit orbit2"></div>
+
+
+                    <div class="earth">
+
+                        <i class="bi bi-globe-americas"></i>
+
+                    </div>
+
+
+                    <div class="floating float1">
+
+                        🌳 Forest
+
+                    </div>
+
+
+                    <div class="floating float2">
+
+                        💧 Water
+
+                    </div>
+
+
+                    <div class="floating float3">
+
+                        🏙 Urban
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- UPLOAD -->
+<!-- ================================================= -->
+
+<section id="upload">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span>
+                STEP 01
+            </span>
+
+            <h2>
+                Upload Satellite Image
+            </h2>
+
+            <p>
+                Select a satellite image for
+                AI-powered classification.
+            </p>
+
+        </div>
+
+
+        <div
+            class="upload-box"
+            id="uploadBox">
+
+
+            <div class="upload-icon">
+
+                <i class="bi bi-cloud-arrow-up"></i>
+
+            </div>
+
+
+            <h3>
+                Upload Your Image
+            </h3>
+
+
+            <p>
+                Drag & drop your satellite image
+                or select it from your computer.
+            </p>
+
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/*">
+
+
+            <label
+                for="imageInput"
+                class="choose-btn">
+
+                <i class="bi bi-folder2-open"></i>
+
+                Choose Image
+
+            </label>
+
+
+            <small class="text-secondary">
+
+                JPG • JPEG • PNG
+
+            </small>
+
+        </div>
+
+
+        <!-- PREVIEW -->
+
+        <div
+            class="preview"
+            id="preview">
+
+            <img
+                id="previewImage"
+                src=""
+                alt="Preview">
+
+
+            <div>
+
+                <h5>
+                    Selected Image
+                </h5>
+
+                <p
+                    id="fileName"
+                    class="text-secondary mb-0">
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="classify-button"
+            id="classifyButton">
+
+            <i class="bi bi-cpu"></i>
+
+            Start AI Classification
+
+        </button>
+
+
+        <!-- LOADING -->
+
+        <div
+            class="loading"
+            id="loading">
+
+            <div class="spinner"></div>
+
+            <p class="mt-3">
+
+                Analyzing satellite image...
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- RESULT -->
+<!-- ================================================= -->
+
+<section id="result">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span>
+                STEP 02
+            </span>
+
+            <h2>
+                Classification Result
+            </h2>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <div class="row g-4 align-items-center">
+
+
+                <div class="col-lg-6">
+
+                    <img
+                        id="resultImage"
+                        class="result-image"
+                        src=""
+                        alt="Satellite Image">
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+
+                    <div class="result-box">
+
+                        <h6>
+                            Predicted Land Category
+                        </h6>
+
+                        <div
+                            class="prediction"
+                            id="prediction">
+
+                            Forest
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-box">
+
+                        <h6>
+                            Confidence
+                        </h6>
+
+                        <div
+                            class="confidence"
+                            id="confidence">
+
+                            94.20%
+
+                        </div>
+
+
+                        <div
+                            class="progress mt-3"
+                            style="height:10px;">
+
+                            <div
+                                id="confidenceBar"
+                                class="progress-bar"
+                                style="width:94%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-box">
+
+                        <h6>
+                            Ontology Concept
+                        </h6>
+
+                        <h5 id="ontologyResult">
+
+                            LandArea → Forest
+
+                        </h5>
+
+                    </div>
+
+
+                    <button
+                        onclick="resetClassification()"
+                        class="btn btn-main">
+
+                        Classify Another Image
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- PROCESS -->
+<!-- ================================================= -->
+
+<section
+    id="process"
+    style="background:#f5f8fc;">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span>
+                HOW IT WORKS
+            </span>
+
+            <h2>
+                Image to Knowledge
+            </h2>
+
+            <p>
+                Four simple steps are used to
+                classify the satellite image.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-3">
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-upload"></i>
+
+                    </div>
+
+                    <h4 class="mt-4">
+                        Upload
+                    </h4>
+
+                    <p>
+                        User uploads a satellite image
+                        into the system.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-sliders"></i>
+
+                    </div>
+
+                    <h4 class="mt-4">
+                        Preprocessing
+                    </h4>
+
+                    <p>
+                        Image is resized and normalized
+                        before classification.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-robot"></i>
+
+                    </div>
+
+                    <h4 class="mt-4">
+                        Classification
+                    </h4>
+
+                    <p>
+                        Machine learning predicts the
+                        land category.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="bi bi-diagram-3"></i>
+
+                    </div>
+
+                    <h4 class="mt-4">
+                        Ontology
+                    </h4>
+
+                    <p>
+                        The prediction is mapped to
+                        a meaningful concept.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- ONTOLOGY -->
+<!-- ================================================= -->
+
+<section
+    class="ontology"
+    id="ontology">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span>
+                STEP 03
+            </span>
+
+            <h2>
+                Ontology Knowledge Structure
+            </h2>
+
+            <p>
+                The ontology organizes land categories
+                into meaningful relationships.
+            </p>
+
+        </div>
+
+
+        <div class="ontology-root">
+
+            <i class="bi bi-globe2"></i>
+
+            Satellite Image
+
+        </div>
+
+
+        <div class="ontology-line"></div>
+
+
+        <div class="ontology-parent">
+
+            <i class="bi bi-map"></i>
+
+            Land Area
+
+        </div>
+
+
+        <div class="ontology-items">
+
+
+            <div class="ontology-item">
+
+                <i class="bi bi-tree"></i>
+
+                Forest
+
+            </div>
+
+
+            <div class="ontology-item">
+
+                <i class="bi bi-water"></i>
+
+                Water
+
+            </div>
+
+
+            <div class="ontology-item">
+
+                <i class="bi bi-flower1"></i>
+
+                Agriculture
+
+            </div>
+
+
+            <div class="ontology-item">
+
+                <i class="bi bi-buildings"></i>
+
+                Residential
+
+            </div>
+
+
+            <div class="ontology-item">
+
+                <i class="bi bi-signpost-2"></i>
+
+                Road
+
+            </div>
+
+
+            <div class="ontology-item">
+
+                <i class="bi bi-sun"></i>
+
+                Desert
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- DASHBOARD -->
+<!-- ================================================= -->
+
+<section id="dashboard">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span>
+                SYSTEM DASHBOARD
+            </span>
+
+            <h2>
+                Classification Overview
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-3">
+
+                <div class="dashboard-card">
+
+                    <h6>
+                        Images Processed
+                    </h6>
+
+                    <div
+                        class="number"
+                        id="totalImages">
+
+                        0
+
+                    </div>
+
+                    <small class="text-secondary">
+
+                        Total classifications
+
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="dashboard-card">
+
+                    <h6>
+                        Forest
+                    </h6>
+
+                    <div
+                        class="number"
+                        id="forestCount">
+
+                        0
+
+                    </div>
+
+                    <small class="text-secondary">
+
+                        Classified images
+
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="dashboard-card">
+
+                    <h6>
+                        Water
+                    </h6>
+
+                    <div
+                        class="number"
+                        id="waterCount">
+
+                        0
+
+                    </div>
+
+                    <small class="text-secondary">
+
+                        Classified images
+
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="dashboard-card">
+
+                    <h6>
+                        Other Areas
+                    </h6>
+
+                    <div
+                        class="number"
+                        id="otherCount">
+
+                        0
+
+                    </div>
+
+                    <small class="text-secondary">
+
+                        Classified images
+
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- CTA -->
+<!-- ================================================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div>
+
+                <h2>
+                    Ready to Analyze?
+                </h2>
+
+                <p>
+                    Upload another satellite image
+                    and explore its land classification.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#upload"
+                class="btn btn-light btn-lg">
+
+                Start Classification
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-md-6">
+
+                <h4>
+                    🛰 SatelliteAI
+                </h4>
+
+                <p>
+                    Satellite Image Classification
+                    System Using Ontology.
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6 text-md-end">
+
+                <p>
+                    Image Processing • Machine Learning
+                    • Ontology
+                </p>
+
+                <p>
+                    © 2026 SatelliteAI
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<script>
+
+
+/* ================================================= */
+/* VARIABLES */
+/* ================================================= */
+
+
+const imageInput =
+    document.getElementById("imageInput");
+
+
+const uploadBox =
+    document.getElementById("uploadBox");
+
+
+const preview =
+    document.getElementById("preview");
+
+
+const previewImage =
+    document.getElementById("previewImage");
+
+
+const fileName =
+    document.getElementById("fileName");
+
+
+const classifyButton =
+    document.getElementById("classifyButton");
+
+
+const loading =
+    document.getElementById("loading");
+
+
+const result =
+    document.getElementById("result");
+
+
+const resultImage =
+    document.getElementById("resultImage");
+
+
+
+/* ================================================= */
+/* IMAGE SELECTION */
+/* ================================================= */
+
+
+imageInput.addEventListener(
+    "change",
+    function () {
+
+        const file =
+            this.files[0];
+
+
+        if (!file) {
+            return;
+        }
+
+
+        showPreview(file);
+
+    }
+);
+
+
+
+/* ================================================= */
+/* SHOW PREVIEW */
+/* ================================================= */
+
+
+function showPreview(file) {
+
+    fileName.textContent =
+        file.name;
+
+
+    const imageURL =
+        URL.createObjectURL(file);
+
+
+    previewImage.src =
+        imageURL;
+
+
+    resultImage.src =
+        imageURL;
+
+
+    preview.style.display =
+        "flex";
+
+
+    classifyButton.style.display =
+        "block";
+
+}
+
+
+
+/* ================================================= */
+/* DRAG & DROP */
+/* ================================================= */
+
+
+uploadBox.addEventListener(
+    "dragover",
+    function(event) {
+
+        event.preventDefault();
+
+        uploadBox.classList.add(
+            "drag"
+        );
+
+    }
+);
+
+
+uploadBox.addEventListener(
+    "dragleave",
+    function() {
+
+        uploadBox.classList.remove(
+            "drag"
+        );
+
+    }
+);
+
+
+uploadBox.addEventListener(
+    "drop",
+    function(event) {
+
+        event.preventDefault();
+
+
+        uploadBox.classList.remove(
+            "drag"
+        );
+
+
+        const file =
+            event.dataTransfer.files[0];
+
+
+        if (file) {
+
+            imageInput.files =
+                event.dataTransfer.files;
+
+            showPreview(file);
+
+        }
+
+    }
+);
+
+
+
+/* ================================================= */
+/* CLASSIFICATION */
+/* ================================================= */
+
+
+classifyButton.addEventListener(
+    "click",
+    function() {
+
+
+        if (!imageInput.files.length) {
+
+            alert(
+                "Please select an image first."
+            );
+
+            return;
+
+        }
+
+
+        classifyButton.style.display =
+            "none";
+
+
+        loading.style.display =
+            "block";
+
+
+        setTimeout(
+            function() {
+
+                classifyImage();
+
+            },
+            1800
+        );
+
+    }
+);
+
+
+
+/* ================================================= */
+/* DEMO CLASSIFICATION */
+/* ================================================= */
+
+
+function classifyImage() {
+
+
+    const classes = [
+
+        {
+            name: "Forest",
+            confidence: 94.2,
+            ontology: "LandArea → Forest"
+        },
+
+        {
+            name: "Water",
+            confidence: 96.1,
+            ontology: "LandArea → Water"
+        },
+
+        {
+            name: "Agricultural Land",
+            confidence: 91.7,
+            ontology: "LandArea → AgriculturalLand"
+        },
+
+        {
+            name: "Residential Area",
+            confidence: 89.5,
+            ontology: "LandArea → ResidentialArea"
+        },
+
+        {
+            name: "Road",
+            confidence: 92.4,
+            ontology: "LandArea → Road"
+        },
+
+        {
+            name: "Desert",
+            confidence: 90.8,
+            ontology: "LandArea → Desert"
+        }
+
+    ];
+
+
+    const randomClass =
+        classes[
+            Math.floor(
+                Math.random() *
+                classes.length
+            )
+        ];
+
+
+    document.getElementById(
+        "prediction"
+    ).textContent =
+        randomClass.name;
+
+
+    document.getElementById(
+        "confidence"
+    ).textContent =
+        randomClass.confidence +
+        "%";
+
+
+    document.getElementById(
+        "confidenceBar"
+    ).style.width =
+        randomClass.confidence +
+        "%";
+
+
+    document.getElementById(
+        "ontologyResult"
+    ).textContent =
+        randomClass.ontology;
+
+
+    loading.style.display =
+        "none";
+
+
+    result.style.display =
+        "block";
+
+
+    result.scrollIntoView({
+        behavior: "smooth"
+    });
+
+
+    updateDashboard(
+        randomClass.name
+    );
+
+}
+
+
+
+/* ================================================= */
+/* DASHBOARD */
+/* ================================================= */
+
+
+let totalImages = 0;
+
+let forestCount = 0;
+
+let waterCount = 0;
+
+let otherCount = 0;
+
+
+function updateDashboard(
+    prediction
+) {
+
+
+    totalImages++;
+
+
+    if (prediction === "Forest") {
+
+        forestCount++;
+
+    }
+
+    else if (prediction === "Water") {
+
+        waterCount++;
+
+    }
+
+    else {
+
+        otherCount++;
+
+    }
+
+
+    document.getElementById(
+        "totalImages"
+    ).textContent =
+        totalImages;
+
+
+    document.getElementById(
+        "forestCount"
+    ).textContent =
+        forestCount;
+
+
+    document.getElementById(
+        "waterCount"
+    ).textContent =
+        waterCount;
+
+
+    document.getElementById(
+        "otherCount"
+    ).textContent =
+        otherCount;
+
+}
+
+
+
+/* ================================================= */
+/* RESET */
+/* ================================================= */
+
+
+function resetClassification() {
+
+
+    result.style.display =
+        "none";
+
+
+    preview.style.display =
+        "none";
+
+
+    classifyButton.style.display =
+        "none";
+
+
+    imageInput.value =
+        "";
+
+
+    window.scrollTo({
+
+        top:
+            document.getElementById(
+                "upload"
+            ).offsetTop - 80,
+
+        behavior:
+            "smooth"
+
+    });
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
